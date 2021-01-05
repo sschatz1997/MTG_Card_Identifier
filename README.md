@@ -1,6 +1,6 @@
 ![Generic badge](https://img.shields.io/badge/Python-3.7.3-informal.svg)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-[![Build Status](https://travis-ci.org/{{sschatz1997}}/{{MTG_Card_Identifier}}.png?branch={{main}})](https://travis-ci.org/{{sschatz1997}}/{{MTG_Card_Identifier}})
+[![Build Status](https://travis-ci.com/sschatz1997/MTG_Card_Identifier.svg?branch=main)](https://travis-ci.org/{{sschatz1997}}/{{MTG_Card_Identifier}})
 # MTG_Card_Identifier
 
 MTG_Card_Identifier is a python based program to identify Magic: The Gathering cards based on their title.
