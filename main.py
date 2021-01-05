@@ -85,7 +85,7 @@ def compare1(img, p1):
 			options.append([text, c, percent])  # text, name, percent
 
 	for o in options:
-		print("{} and {} are {} percent a match\n".format(o[0], o[1], o[2]))
+		print("{} and {} are {} percent a match\n".format(o[0], o[1]*100, o[2]))
 
 	if len(options) < 1:
 		print("File was less the a {}% match".format(p1*100))
