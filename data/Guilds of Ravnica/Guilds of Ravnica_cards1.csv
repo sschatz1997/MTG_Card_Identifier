@@ -1,0 +1,284 @@
+id,card_name
+1,Blade Instructor
+2,Bounty Agent
+3,Candlelight Vigil
+4,Citywide Bust
+5,Collar the Culprit
+6,Conclave Tribunal
+7,Crush Contraband
+8,Dawn of Hope
+9,Demotion
+10,Divine Visitation
+11,Flight of Equenauts
+12,Gird for Battle
+13,Haazda Marshal
+14,Healer's Hawk
+15,Hunted Witness
+16,Inspiring Unicorn
+17,Intrusive Packbeast
+18,Ledev Guardian
+19,Light of the Legion
+20,Loxodon Restorer
+21,Luminous Bonds
+22,Parhelion Patrol
+23,Righteous Blow
+24,Roc Charger
+25,Skyline Scout
+26,Sunhome Stalwart
+27,Sworn Companions
+28,Take Heart
+29,Tenth District Guard
+30,Venerated Loxodon
+31,Capture Sphere
+32,Chemister's Insight
+33,Citywatch Sphinx
+34,Dazzling Lights
+35,Devious Cover-Up
+36,Dimir Informant
+37,Disdainful Stroke
+38,Dream Eater
+39,Drowned Secrets
+40,Enhanced Surveillance
+41,Guild Summit
+42,Leapfrog
+43,Maximize Altitude
+44,Mission Briefing
+45,Murmuring Mystic
+46,Muse Drake
+47,Narcomoeba
+48,Nightveil Sprite
+49,Omnispell Adept
+50,Passwall Adept
+51,Quasiduplicate
+52,Radical Idea
+53,Selective Snare
+54,Sinister Sabotage
+55,Thoughtbound Phantasm
+56,Unexplained Disappearance
+57,Vedalken Mesmerist
+58,Wall of Mist
+59,Watcher in the Mist
+60,Wishcoin Crab
+61,Barrier of Bones
+62,Bartizan Bats
+63,Blood Operative
+64,Burglar Rat
+65,Child of Night
+66,Creeping Chill
+67,Dead Weight
+68,Deadly Visit
+69,Doom Whisperer
+70,Douser of Lights
+71,Gruesome Menagerie
+72,Hired Poisoner
+73,Kraul Swarm
+74,Lotleth Giant
+75,Mausoleum Secrets
+76,Mephitic Vapors
+77,Midnight Reaper
+78,Moodmark Painter
+79,Necrotic Wound
+80,Never Happened
+81,Pilfering Imp
+82,Plaguecrafter
+83,Price of Fame
+84,Ritual of Soot
+85,Severed Strands
+86,Spinal Centipede
+87,Undercity Necrolisk
+88,Veiled Shade
+89,Vicious Rumors
+90,Whispering Snitch
+91,Arclight Phoenix
+92,Barging Sergeant
+93,Book Devourer
+94,Command the Storm
+95,Cosmotronic Wave
+96,Direct Current
+97,Electrostatic Field
+98,Erratic Cyclops
+99,Experimental Frenzy
+100,Fearless Halberdier
+101,Fire Urchin
+102,Goblin Banneret
+103,Goblin Cratermaker
+104,Goblin Locksmith
+105,Gravitic Punch
+106,Hellkite Whelp
+107,Inescapable Blaze
+108,Lava Coil
+109,Legion Warboss
+110,Maniacal Rage
+111,Maximize Velocity
+112,Ornery Goblin
+113,Risk Factor
+114,Rubblebelt Boar
+115,Runaway Steam-Kin
+116,Smelt-Ward Minotaur
+117,Street Riot
+118,Sure Strike
+119,Torch Courier
+120,Wojek Bodyguard
+121,Affectionate Indrik
+122,Arboretum Elemental
+123,Beast Whisperer
+124,Bounty of Might
+125,Circuitous Route
+126,Crushing Canopy
+127,Devkarin Dissident
+128,District Guide
+129,Generous Stray
+130,Golgari Raiders
+131,Grappling Sundew
+132,Hatchery Spider
+133,Hitchclaw Recluse
+134,Ironshell Beetle
+135,Kraul Foragers
+136,Kraul Harpooner
+137,Might of the Masses
+138,Nullhide Ferox
+139,Pack's Favor
+140,Pause for Reflection
+141,Pelt Collector
+142,Portcullis Vine
+143,Prey Upon
+144,Siege Wurm
+145,Sprouting Renewal
+146,Urban Utopia
+147,Vigorspore Wurm
+148,Vivid Revival
+149,Wary Okapi
+150,Wild Ceratok
+151,Artful Takedown
+152,Assassin's Trophy
+153,"Aurelia, Exemplar of Justice"
+154,Beacon Bolt
+155,Beamsplitter Mage
+156,Boros Challenger
+157,Camaraderie
+158,Centaur Peacemaker
+159,Chance for Glory
+160,Charnel Troll
+161,Conclave Cavalier
+162,Conclave Guildmage
+163,Crackling Drake
+164,Darkblade Agent
+165,Deafening Clarion
+166,Dimir Spybug
+167,Disinformation Campaign
+168,"Emmara, Soul of the Accord"
+169,Erstwhile Trooper
+170,"Etrata, the Silencer"
+171,Firemind's Research
+172,Garrison Sergeant
+173,Glowspore Shaman
+174,Goblin Electromancer
+175,Golgari Findbroker
+176,Hammer Dropper
+177,House Guildmage
+178,Hypothesizzle
+179,Ionize
+180,"Izoni, Thousand-Eyed"
+181,Join Shields
+182,Justice Strike
+183,Knight of Autumn
+184,"Lazav, the Multifarious"
+185,League Guildmage
+186,Ledev Champion
+187,Legion Guildmage
+188,March of the Multitudes
+189,Mnemonic Betrayal
+190,Molderhulk
+191,Nightveil Predator
+192,"Niv-Mizzet, Parun"
+193,Notion Rain
+194,Ochran Assassin
+195,"Ral, Izzet Viceroy"
+196,Rhizome Lurcher
+197,Rosemane Centaur
+198,Skyknight Legionnaire
+199,Sonic Assault
+200,Sumala Woodshaper
+201,Swarm Guildmage
+202,Swathcutter Giant
+203,Swiftblade Vindicator
+204,"Tajic, Legion's Edge"
+205,Thief of Sanity
+206,Thought Erasure
+207,Thousand-Year Storm
+208,Trostani Discordant
+209,Truefire Captain
+210,Undercity Uprising
+211,Underrealm Lich
+212,Unmoored Ego
+213,"Vraska, Golgari Queen"
+214,Wee Dragonauts
+215,Worldsoul Colossus
+216,Fresh-Faced Recruit
+217,Piston-Fist Cyclops
+218,Pitiless Gorgon
+219,Vernadi Shieldmate
+220,Whisper Agent
+221,Assure // Assemble
+222,Assure // Assemble
+223,Connive // Concoct
+224,Connive // Concoct
+225,Discovery // Dispersal
+226,Discovery // Dispersal
+227,Expansion // Explosion
+228,Expansion // Explosion
+229,Find // Finality
+230,Find // Finality
+231,Flower // Flourish
+232,Flower // Flourish
+233,Integrity // Intervention
+234,Integrity // Intervention
+235,Invert // Invent
+236,Invert // Invent
+237,Response // Resurgence
+238,Response // Resurgence
+239,Status // Statue
+240,Status // Statue
+241,Boros Locket
+242,Chamber Sentry
+243,Chromatic Lantern
+244,Dimir Locket
+245,Gatekeeper Gargoyle
+246,Glaive of the Guildpact
+247,Golgari Locket
+248,Izzet Locket
+249,Rampaging Monument
+250,Selesnya Locket
+251,Silent Dart
+252,Wand of Vertebrae
+253,Boros Guildgate
+254,Boros Guildgate
+255,Dimir Guildgate
+256,Dimir Guildgate
+257,Gateway Plaza
+258,Golgari Guildgate
+259,Golgari Guildgate
+260,Guildmages' Forum
+261,Izzet Guildgate
+262,Izzet Guildgate
+263,Overgrown Tomb
+264,Sacred Foundry
+265,Selesnya Guildgate
+266,Selesnya Guildgate
+267,Steam Vents
+268,Temple Garden
+269,Watery Grave
+270,Plains
+271,Island
+272,Swamp
+273,Mountain
+274,Forest
+275,"Ral, Caller of Storms"
+276,Ral's Dispersal
+277,Precision Bolt
+278,Ral's Staticaster
+279,"Vraska, Regal Gorgon"
+280,Kraul Raider
+281,Attendant of Vraska
+282,Vraska's Stoneglare
+283,Impervious Greatwurm

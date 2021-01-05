@@ -1,0 +1,458 @@
+id,card_name
+1,Acclaimed Contender
+2,All That Glitters
+3,Archon of Absolution
+4,Ardenvale Paladin
+5,Ardenvale Tactician // Dizzying Swoop
+6,Ardenvale Tactician // Dizzying Swoop
+7,Bartered Cow
+8,Beloved Princess
+9,Charming Prince
+10,The Circle of Loyalty
+11,Deafening Silence
+12,Faerie Guidemother // Gift of the Fae
+13,Faerie Guidemother // Gift of the Fae
+14,Flutterfox
+15,Fortifying Provisions
+16,Giant Killer // Chop Down
+17,Giant Killer // Chop Down
+18,Glass Casket
+19,Happily Ever After
+20,Harmonious Archon
+21,Hushbringer
+22,Knight of the Keep
+23,"Linden, the Steadfast Queen"
+24,Lonesome Unicorn // Rider in Need
+25,Lonesome Unicorn // Rider in Need
+26,Mysterious Pathlighter
+27,Outflank
+28,Prized Griffin
+29,Rally for the Throne
+30,Realm-Cloaked Giant // Cast Off
+31,Realm-Cloaked Giant // Cast Off
+32,Righteousness
+33,Shepherd of the Flock // Usher to Safety
+34,Shepherd of the Flock // Usher to Safety
+35,Shining Armor
+36,Silverflame Ritual
+37,Silverflame Squire // On Alert
+38,Silverflame Squire // On Alert
+39,"Syr Alin, the Lion's Claw"
+40,Trapped in the Tower
+41,True Love's Kiss
+42,Venerable Knight
+43,Worthy Knight
+44,Youthful Knight
+45,Animating Faerie // Bring to Life
+46,Animating Faerie // Bring to Life
+47,Brazen Borrower // Petty Theft
+48,Brazen Borrower // Petty Theft
+49,Charmed Sleep
+50,Corridor Monitor
+51,Didn't Say Please
+52,"Emry, Lurker of the Loch"
+53,Fae of Wishes // Granted
+54,Fae of Wishes // Granted
+55,Faerie Vandal
+56,Folio of Fancies
+57,Frogify
+58,"Gadwick, the Wizened"
+59,Hypnotic Sprite // Mesmeric Glare
+60,Hypnotic Sprite // Mesmeric Glare
+61,Into the Story
+62,The Magic Mirror
+63,Mantle of Tides
+64,Merfolk Secretkeeper // Venture Deeper
+65,Merfolk Secretkeeper // Venture Deeper
+66,Midnight Clock
+67,Mirrormade
+68,Mistford River Turtle
+69,Moonlit Scavengers
+70,Mystical Dispute
+71,Opt
+72,Overwhelmed Apprentice
+73,Queen of Ice // Rage of Winter
+74,Queen of Ice // Rage of Winter
+75,Run Away Together
+76,Sage of the Falls
+77,So Tiny
+78,Steelgaze Griffin
+79,Stolen by the Fae
+80,"Syr Elenora, the Discerning"
+81,Tome Raider
+82,Turn into a Pumpkin
+83,Unexplained Vision
+84,Vantress Gargoyle
+85,Vantress Paladin
+86,Wishful Merfolk
+87,Witching Well
+88,"Ayara, First of Locthwain"
+89,Bake into a Pie
+90,Barrow Witches
+91,Belle of the Brawl
+92,Blacklance Paragon
+93,Bog Naughty
+94,Cauldron Familiar
+95,The Cauldron of Eternity
+96,Cauldron's Gift
+97,Clackbridge Troll
+98,Epic Downfall
+99,Eye Collector
+100,Festive Funeral
+101,Foreboding Fruit
+102,Forever Young
+103,Foulmire Knight // Profane Insight
+104,Foulmire Knight // Profane Insight
+105,Giant's Skewer
+106,Lash of Thorns
+107,Locthwain Paladin
+108,Lost Legion
+109,Malevolent Noble
+110,Memory Theft
+111,Murderous Rider // Swift End
+112,Murderous Rider // Swift End
+113,Oathsworn Knight
+114,Order of Midnight // Alter Fate
+115,Order of Midnight // Alter Fate
+116,Piper of the Swarm
+117,"Rankle, Master of Pranks"
+118,Reaper of Night // Harvest Fear
+119,Reaper of Night // Harvest Fear
+120,Reave Soul
+121,Revenge of Ravens
+122,Smitten Swordmaster // Curry Favor
+123,Smitten Swordmaster // Curry Favor
+124,Specter's Shriek
+125,"Syr Konrad, the Grim"
+126,Tempting Witch
+127,Wicked Guardian
+128,Wishclaw Talisman
+129,Witch's Vengeance
+130,Barge In
+131,Bloodhaze Wolverine
+132,Blow Your House Down
+133,Bonecrusher Giant // Stomp
+134,Bonecrusher Giant // Stomp
+135,Brimstone Trebuchet
+136,Burning-Yard Trainer
+137,Claim the Firstborn
+138,Crystal Slipper
+139,Embercleave
+140,Embereth Paladin
+141,Embereth Shieldbreaker // Battle Display
+142,Embereth Shieldbreaker // Battle Display
+143,Ferocity of the Wilds
+144,Fervent Champion
+145,Fires of Invention
+146,Fling
+147,Irencrag Feat
+148,Irencrag Pyromancer
+149,Joust
+150,Mad Ratter
+151,Merchant of the Vale // Haggle
+152,Merchant of the Vale // Haggle
+153,Ogre Errant
+154,Opportunistic Dragon
+155,Raging Redcap
+156,Redcap Melee
+157,Redcap Raiders
+158,Rimrock Knight // Boulder Rush
+159,Rimrock Knight // Boulder Rush
+160,Robber of the Rich
+161,Scorching Dragonfire
+162,Searing Barrage
+163,Seven Dwarves
+164,Skullknocker Ogre
+165,Slaying Fire
+166,Sundering Stroke
+167,"Syr Carah, the Bold"
+168,Thrill of Possibility
+169,"Torbran, Thane of Red Fell"
+170,Weaselback Redcap
+171,Beanstalk Giant // Fertile Footsteps
+172,Beanstalk Giant // Fertile Footsteps
+173,Curious Pair // Treats to Share
+174,Curious Pair // Treats to Share
+175,Edgewall Innkeeper
+176,Feasting Troll King
+177,Fell the Pheasant
+178,Fierce Witchstalker
+179,Flaxen Intruder // Welcome Home
+180,Flaxen Intruder // Welcome Home
+181,Garenbrig Carver // Shield's Might
+182,Garenbrig Carver // Shield's Might
+183,Garenbrig Paladin
+184,Garenbrig Squire
+185,Giant Opportunity
+186,Gilded Goose
+187,The Great Henge
+188,Insatiable Appetite
+189,Keeper of Fables
+190,Kenrith's Transformation
+191,Lovestruck Beast // Heart's Desire
+192,Lovestruck Beast // Heart's Desire
+193,Maraleaf Rider
+194,Oakhame Adversary
+195,Once and Future
+196,Once Upon a Time
+197,Outmuscle
+198,Questing Beast
+199,Return of the Wildspeaker
+200,Return to Nature
+201,Rosethorn Acolyte // Seasonal Ritual
+202,Rosethorn Acolyte // Seasonal Ritual
+203,Rosethorn Halberd
+204,Sporecap Spider
+205,"Syr Faren, the Hengehammer"
+206,Tall as a Beanstalk
+207,Trail of Crumbs
+208,Tuinvale Treefolk // Oaken Boon
+209,Tuinvale Treefolk // Oaken Boon
+210,Wicked Wolf
+211,Wildborn Preserver
+212,Wildwood Tracker
+213,Wolf's Quarry
+214,"Yorvo, Lord of Garenbrig"
+215,Dance of the Manse
+216,Doom Foretold
+217,Drown in the Loch
+218,Escape to the Wilds
+219,Faeburrow Elder
+220,"Garruk, Cursed Huntsman"
+221,"Grumgully, the Generous"
+222,Improbable Alliance
+223,Inspiring Veteran
+224,Lochmere Serpent
+225,Maraleaf Pixie
+226,"Oko, Thief of Crowns"
+227,Outlaws' Merriment
+228,The Royal Scions
+229,Savvy Hunter
+230,Shinechaser
+231,Steelclaw Lance
+232,Stormfist Crusader
+233,Wandermare
+234,Wintermoor Commander
+235,Arcanist's Owl
+236,Covetous Urge
+237,Deathless Knight
+238,Elite Headhunter
+239,Fireborn Knight
+240,Loch Dragon
+241,Oakhame Ranger // Bring Back
+242,Oakhame Ranger // Bring Back
+243,Rampart Smasher
+244,Resolute Rider
+245,Thunderous Snapper
+246,Clockwork Servant
+247,Crashing Drawbridge
+248,Enchanted Carriage
+249,Gingerbrute
+250,Golden Egg
+251,Henge Walker
+252,Heraldic Banner
+253,Inquisitive Puppet
+254,Jousting Dummy
+255,Locthwain Gargoyle
+256,Lucky Clover
+257,Prophet of the Peak
+258,Roving Keep
+259,Scalding Cauldron
+260,Shambling Suit
+261,Signpost Scarecrow
+262,Sorcerer's Broom
+263,Sorcerous Spyglass
+264,Spinning Wheel
+265,Stonecoil Serpent
+266,Weapon Rack
+267,Witch's Oven
+268,Castle Ardenvale
+269,Castle Embereth
+270,Castle Garenbrig
+271,Castle Locthwain
+272,Castle Vantress
+273,Dwarven Mine
+274,Fabled Passage
+275,Gingerbread Cabin
+276,Idyllic Grange
+277,Mystic Sanctuary
+278,Tournament Grounds
+279,Witch's Cottage
+280,Plains
+281,Plains
+282,Plains
+283,Plains
+284,Island
+285,Island
+286,Island
+287,Island
+288,Swamp
+289,Swamp
+290,Swamp
+291,Swamp
+292,Mountain
+293,Mountain
+294,Mountain
+295,Mountain
+296,Forest
+297,Forest
+298,Forest
+299,Forest
+300,"Garruk, Cursed Huntsman"
+301,"Oko, Thief of Crowns"
+302,The Royal Scions
+303,Ardenvale Tactician // Dizzying Swoop
+304,Ardenvale Tactician // Dizzying Swoop
+305,Faerie Guidemother // Gift of the Fae
+306,Faerie Guidemother // Gift of the Fae
+307,Giant Killer // Chop Down
+308,Giant Killer // Chop Down
+309,Lonesome Unicorn // Rider in Need
+310,Lonesome Unicorn // Rider in Need
+311,Realm-Cloaked Giant // Cast Off
+312,Realm-Cloaked Giant // Cast Off
+313,Shepherd of the Flock // Usher to Safety
+314,Shepherd of the Flock // Usher to Safety
+315,Silverflame Squire // On Alert
+316,Silverflame Squire // On Alert
+317,Animating Faerie // Bring to Life
+318,Animating Faerie // Bring to Life
+319,Brazen Borrower // Petty Theft
+320,Brazen Borrower // Petty Theft
+321,Fae of Wishes // Granted
+322,Fae of Wishes // Granted
+323,Hypnotic Sprite // Mesmeric Glare
+324,Hypnotic Sprite // Mesmeric Glare
+325,Merfolk Secretkeeper // Venture Deeper
+326,Merfolk Secretkeeper // Venture Deeper
+327,Queen of Ice // Rage of Winter
+328,Queen of Ice // Rage of Winter
+329,Foulmire Knight // Profane Insight
+330,Foulmire Knight // Profane Insight
+331,Murderous Rider // Swift End
+332,Murderous Rider // Swift End
+333,Order of Midnight // Alter Fate
+334,Order of Midnight // Alter Fate
+335,Reaper of Night // Harvest Fear
+336,Reaper of Night // Harvest Fear
+337,Smitten Swordmaster // Curry Favor
+338,Smitten Swordmaster // Curry Favor
+339,Bonecrusher Giant // Stomp
+340,Bonecrusher Giant // Stomp
+341,Embereth Shieldbreaker // Battle Display
+342,Embereth Shieldbreaker // Battle Display
+343,Merchant of the Vale // Haggle
+344,Merchant of the Vale // Haggle
+345,Rimrock Knight // Boulder Rush
+346,Rimrock Knight // Boulder Rush
+347,Beanstalk Giant // Fertile Footsteps
+348,Beanstalk Giant // Fertile Footsteps
+349,Curious Pair // Treats to Share
+350,Curious Pair // Treats to Share
+351,Flaxen Intruder // Welcome Home
+352,Flaxen Intruder // Welcome Home
+353,Garenbrig Carver // Shield's Might
+354,Garenbrig Carver // Shield's Might
+355,Lovestruck Beast // Heart's Desire
+356,Lovestruck Beast // Heart's Desire
+357,Rosethorn Acolyte // Seasonal Ritual
+358,Rosethorn Acolyte // Seasonal Ritual
+359,Tuinvale Treefolk // Oaken Boon
+360,Tuinvale Treefolk // Oaken Boon
+361,Oakhame Ranger // Bring Back
+362,Oakhame Ranger // Bring Back
+363,"Kenrith, the Returned King"
+364,"Rowan, Fearless Sparkmage"
+365,Garrison Griffin
+366,Rowan's Battleguard
+367,Rowan's Stalwarts
+368,Wind-Scarred Crag
+369,"Oko, the Trickster"
+370,Oko's Accomplices
+371,Bramblefort Fink
+372,Oko's Hospitality
+373,Thornwood Falls
+374,Mace of the Valiant
+375,Silverwing Squadron
+376,Faerie Formation
+377,Shimmer Dragon
+378,Workshop Elders
+379,Chittering Witch
+380,Taste of Death
+381,Embereth Skyblazer
+382,Steelbane Hydra
+383,Thorn Mammoth
+384,"Alela, Artful Provocateur"
+385,Banish into Fable
+386,"Chulane, Teller of Tales"
+387,Gluttonous Troll
+388,Knights' Charge
+389,"Korvold, Fae-Cursed King"
+390,"Syr Gwyn, Hero of Ashvale"
+391,Arcane Signet
+392,Tome of Legends
+393,Command Tower
+394,Acclaimed Contender
+395,Charming Prince
+396,The Circle of Loyalty
+397,Happily Ever After
+398,Harmonious Archon
+399,Hushbringer
+400,"Linden, the Steadfast Queen"
+401,Worthy Knight
+402,"Emry, Lurker of the Loch"
+403,Folio of Fancies
+404,"Gadwick, the Wizened"
+405,The Magic Mirror
+406,Midnight Clock
+407,Mirrormade
+408,Stolen by the Fae
+409,Vantress Gargoyle
+410,"Ayara, First of Locthwain"
+411,Blacklance Paragon
+412,The Cauldron of Eternity
+413,Clackbridge Troll
+414,Oathsworn Knight
+415,Piper of the Swarm
+416,"Rankle, Master of Pranks"
+417,Wishclaw Talisman
+418,Witch's Vengeance
+419,Embercleave
+420,Fervent Champion
+421,Fires of Invention
+422,Irencrag Feat
+423,Irencrag Pyromancer
+424,Opportunistic Dragon
+425,Robber of the Rich
+426,Sundering Stroke
+427,"Torbran, Thane of Red Fell"
+428,Feasting Troll King
+429,Gilded Goose
+430,The Great Henge
+431,Once Upon a Time
+432,Questing Beast
+433,Return of the Wildspeaker
+434,Wicked Wolf
+435,Wildborn Preserver
+436,"Yorvo, Lord of Garenbrig"
+437,Dance of the Manse
+438,Doom Foretold
+439,Escape to the Wilds
+440,Faeburrow Elder
+441,Lochmere Serpent
+442,Outlaws' Merriment
+443,Stormfist Crusader
+444,Sorcerous Spyglass
+445,Stonecoil Serpent
+446,Castle Ardenvale
+447,Castle Embereth
+448,Castle Garenbrig
+449,Castle Locthwain
+450,Castle Vantress
+451,Fabled Passage
+452,Piper of the Swarm
+453,Glass Casket
+454,Slaying Fire
+455,Kenrith's Transformation
+456,Improbable Alliance
+457,Inspiring Veteran
