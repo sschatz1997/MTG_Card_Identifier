@@ -6,11 +6,19 @@ MTG_Card_Identifier is a python based program to identify Magic: The Gathering c
 
 ## Installation
 
-On Linux run the install.sh script
+### Linux 
+- Run the install.sh script
+
+### Windows 
+- Run:
+```
+pip3 install -r requirements.txt
+```
+- May have to install Tesseract from [here](https://github.com/UB-Mannheim/tesseract/wiki)
 
 ## Usage 
 ```
-$ python3 -img 
+$ python3 -img [ image ] -p [ percent of matching you want ]
   -h, --help            show this help message and exit
   -img IMAGE, --Image IMAGE
                         Insert path to the Image here.
