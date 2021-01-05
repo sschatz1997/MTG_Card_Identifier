@@ -10,13 +10,21 @@ On Linux run the install.sh script
 
 ## Usage 
 ```
-optional arguments:
+$ python3 -img 
   -h, --help            show this help message and exit
   -img IMAGE, --Image IMAGE
                         Insert path to the Image here.
   -p PERCENT, --Percent PERCENT
                         Enter the percent you want the comparison to be [whole numbers].
 ```
+
+## Requirements
+### Python:
+- [opencv_python](https://pypi.org/project/opencv-python/)
+- [pandas](https://pypi.org/project/pandas/)
+- [progress](https://pypi.org/project/progress/)
+- [pytesseract](https://pypi.org/project/pytesseract/)
+- [Pillow](https://pypi.org/project/Pillow/)
 
 
 
