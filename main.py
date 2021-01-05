@@ -5,6 +5,7 @@ import cv2
 import sys
 import time
 import config
+import argparse
 import pandas as pd
 from PIL import Image
 from progress.bar import Bar
@@ -19,12 +20,14 @@ elif sys.platform == "linux":
 	from pytesseract import image_to_string
 
 # change the images color
+
+
 def change_color(img):
 	black = (0, 0, 0)
 	white = (255, 255, 255)
 	threshold = (160, 160, 160)
 	img = img.convert('LA')  # more grayscale
-	img = make_bigger(img) # may need to change location where this happens
+	img = make_bigger(img)  # may need to change location where this happens
 
 	# pixel comparison
 	pixels = img.getdata()
@@ -40,11 +43,15 @@ def change_color(img):
 	return img
 
 # make image 600x600
+
+
 def make_bigger(img):
-	im2 = img.resize((600,600))
+	im2 = img.resize((600, 600))
 	return im2
 
 # crop image
+
+
 def crop_image(img):
 	tup1 = (0, 15, 400, 80)  # new demensions
 	cropped = img.crop(tup1)  # crop for title
@@ -59,8 +66,10 @@ def get_all_cards():
 	return card_names
 
 #compare the output of the AI and the actual names of the car if the ratio is above 0.9 as if its their card
-def compare1(img):
-	CN = get_all_cards() # card names
+
+
+def compare1(img, p1):
+	CN = get_all_cards()  # card names
 
 	# different systaxs for each system
 	if sys.platform == "win32":
@@ -72,15 +81,14 @@ def compare1(img):
 	options = []
 	for c in CN:
 		percent = similar(text, c)
-		if percent > 0.72 or percent == 0.72:
-			options.append([text, c, percent]) # text, name, percent
-		
-	
+		if percent > p1 or percent == p1:
+			options.append([text, c, percent])  # text, name, percent
+
 	for o in options:
 		print("{} and {} are {} percent a match\n".format(o[0], o[1], o[2]))
-	
+
 	if len(options) < 1:
-		print("File was less the a 72% match")
+		print("File was less the a {}% match".format(p1*100))
 		print("Make sure the card is in one of the following sets: ")
 		as1 = config.active_sets
 		for a in as1:
@@ -111,25 +119,40 @@ def output(to_log):
 
 # check the simularity between two strings
 # credit: https://stackoverflow.com/questions/17388213/find-the-similarity-metric-between-two-strings
+
+
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 # get all images
+
+
 def all_img():
 	data = pd.read_csv(config.master_cards, index_col=False)
 	card_names = list(data['images'])
 	del data
 	return card_names
 
+
 def main():
-	img = str(sys.argv[1]) # user inputed file name
+	#img = str(sys.argv[1])  # user inputed file name
+	parser = argparse.ArgumentParser(
+		description='Arguments for the MTG Card Identifier.')
+	parser.add_argument(
+		'-img', '--Image', help='Insert path to the Image here.', required=True)
+	parser.add_argument(
+		'-p', '--Percent', help='Enter the percent you want the comparison to be [whole numbers].', required=False, default=72)
+	argument = parser.parse_args()
+	img = str(argument.Image)  # user inputed file name
 	head, tail = os.path.split(img)
-	print("Checking {}".format(tail)) 
+	percent = float(argument.Percent/100)
+	print("Checking {}".format(tail))
 	del head, tail
 	img = Image.open(img)
 	img = change_color(img)
 	img = crop_image(img)
-	compare1(img)
+	compare1(img, percent)
+
 
 if __name__ == "__main__":
 	main()
