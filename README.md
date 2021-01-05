@@ -35,7 +35,13 @@ $ python3 -img [ image ] -p [ percent of matching you want ]
 - [Pillow](https://pypi.org/project/Pillow/)
 
 
-
+## Sets included:
+- Ravnica Allegiance
+- Guilds of Ravnica
+- Throne of Eldraine
+- Ikoria Lair of Behemoths
+- Zendikar Rising
+- Zendikar
 
 
 
