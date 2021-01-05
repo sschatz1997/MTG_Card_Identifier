@@ -10,4 +10,4 @@
 
 
 
-**NOTE: All immages belong to Magic: The Gathering and Wizards of the Coast respectively**
+**NOTE: All i mages belong to Magic: The Gathering and Wizards of the Coast respectively**
