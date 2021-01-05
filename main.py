@@ -95,32 +95,8 @@ def compare1(img, p1):
 			print("\t--+ {} with {} entries.".format(a, config.number_of_images[a]))
 
 
-def output(to_log):
-	file1 = config.main_path + "compare1.csv"
-	# make 4 lists
-	text = []
-	name = []
-	percent = []
-
-	for t in to_log:
-		text.append(t[0])
-		name.append(t[1])
-		percent.append(t[2])
-
-	# make a dataframe
-	NDF = {
-		"text": text,
-		"name": name,
-		"percent": percent,
-	}
-
-	dataOut = pd.DataFrame(NDF, columns=['text', 'name', 'percent'])
-	dataOut.to_csv(file1, encoding="utf-8", index=False)
-
 # check the simularity between two strings
 # credit: https://stackoverflow.com/questions/17388213/find-the-similarity-metric-between-two-strings
-
-
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
