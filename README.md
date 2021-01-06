@@ -37,12 +37,18 @@ $ python3 -img [ image ] -p [ percent of matching you want ]
 
 
 ## Sets included:
-- Ravnica Allegiance
-- Guilds of Ravnica
-- Throne of Eldraine
-- Ikoria Lair of Behemoths
-- Zendikar Rising
-- Zendikar
+- Aether Revolt [MTG Official Link](https://magic.wizards.com/en/products/aether-revolt)
+- Amonkhet [MTG Official Link](https://magic.wizards.com/en/products/amonkhet)
+- Dominaria [MTG Official Link](https://magic.wizards.com/en/products/dominaria)
+- Guilds of Ravnica [MTG Official Link](https://magic.wizards.com/en/products/guilds-ravnica)
+- Hour of Devastation [MTG Official Link](https://magic.wizards.com/en/products/hour-devastation)
+- Ikoria Lair of Behemoths [MTG Official Link](https://magic.wizards.com/en/products/ikoria)
+- Ixalan [MTG Official Link](https://magic.wizards.com/en/products/ixalan)
+- Ravnica Allegiance [MTG Official Link](https://magic.wizards.com/en/products/ravnica-allegiance)
+- Theros Beyond Death [MTG Official Link](https://magic.wizards.com/en/products/TherosBeyondDeath)
+- Throne of Eldraine [MTG Official Link](https://magic.wizards.com/en/products/throne-of-eldraine)
+- Zendikar [MTG Official Link](https://magic.wizards.com/en/products/zendikar)
+- Zendikar Rising [MTG Official Link](https://magic.wizards.com/en/products/zendikar-rising)
 
 
 

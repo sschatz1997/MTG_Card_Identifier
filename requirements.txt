@@ -4,3 +4,6 @@ progress==1.5
 pytesseract==0.3.7
 Pillow==8.1.0
 pytest==6.2.1
+imagehash==4.2.0
+art==5.1
+colorama==0.4.4

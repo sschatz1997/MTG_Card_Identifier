@@ -1,16 +1,23 @@
 # main.py
-
+from functions import get_all_cards, get_set_by_card_name1, image_comapre_hash
 import os
 import cv2
 import sys
 import time
 import config
+import os.path
 import argparse
+import requests
+from art import *
 import pandas as pd
 from PIL import Image
 from progress.bar import Bar
 from difflib import SequenceMatcher
-#from PIL.ExifTags import TAGS
+from colorama import init, Fore, Back, Style
+init(convert=True, autoreset=True)
+
+# my functions
+
 
 # import pytesseract for windows or linux
 if sys.platform == "win32":
@@ -18,6 +25,32 @@ if sys.platform == "win32":
 	pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 elif sys.platform == "linux":
 	from pytesseract import image_to_string
+
+"""
+pretty title 1
+less then 150 pixel length for the title means that it will be stack and if not then it wont
+"""
+
+
+def pt1():
+	size = int(os.get_terminal_size().columns)
+	if size <= 150:
+		tprint('''MTG Card 
+		Identifier 
+		Script''', font="slant")
+	else:
+		t1 = '''MTG Card Identifier Script'''
+		tprint(t1, font="slant")
+
+# this display error pretty begging
+
+
+def dis_error():
+	print(Fore.RED + "=====ERROR=====".center(os.get_terminal_size().columns))
+
+
+def dis_error_end():
+	print(Fore.RED + '==============='.center(os.get_terminal_size().columns))
 
 # change the images color
 
@@ -58,18 +91,30 @@ def crop_image(img):
 	return cropped
 
 
-# get all card names that it can return a picture
-def get_all_cards():
-	data = pd.read_csv(config.master_cards, index_col=False)
-	card_names = list(data['card_name'])
-	del data
-	return card_names
+"""
+text splitlines text
+splits the text and returns the list of options
+"""
+
+
+def split_text(text, p1):
+	CN = get_all_cards()  # card names
+	lines1 = text.splitlines()
+	options = []
+	for l in lines1:
+		for c in CN:
+			percent = similar(l, c)
+			if percent > p1 or percent == p1:
+				options.append([l, c, percent])  # text, name, percent
+
+	return options
 
 #compare the output of the AI and the actual names of the car if the ratio is above 0.9 as if its their card
 
 
-def compare1(img, p1):
-	CN = get_all_cards()  # card names
+def compare1(img, p1, og_image):
+	# these chars can be stripped for better comparison
+	stripable = ['=', '!', '?', '-', "'", '.']
 
 	# different systaxs for each system
 	if sys.platform == "win32":
@@ -77,15 +122,30 @@ def compare1(img, p1):
 	elif sys.platform == "linux":
 		text = image_to_string(img).strip()  # generated text || linux
 
+	# strip excess chars
+	for strip in stripable:
+		text = text.replace(strip, "")
 	text = text.strip('\n')
-	options = []
-	for c in CN:
-		percent = similar(text, c)
-		if percent > p1 or percent == p1:
-			options.append([text, c, percent])  # text, name, percent
+	options = split_text(text, p1)
 
 	for o in options:
-		print("{} and {} are {} percent a match\n".format(o[0], o[1], o[2]*100))
+		print(Fore.GREEN + "Text detected:", Fore.YELLOW + "{}".format(o[0]))
+		print(Fore.GREEN + "Card name closest: ", Fore.YELLOW + "{}".format(o[1]))
+		print(Fore.GREEN + "Percent Match: ",
+		      Fore.MAGENTA + "{}%".format(float(o[2]*100)))
+		print(Fore.GREEN + "From Set: ", Fore.YELLOW +
+		      "{}.".format(get_set_by_card_name1(str(o[1].replace(".jpg", "")))))
+		hash1, hash2 = image_comapre_hash(o[1], og_image)
+		comb = hash1 - hash2
+		print(Fore.GREEN + "Hash from guessed Name: ",
+		      Fore.YELLOW + "{}".format(hash1))
+		print(Fore.GREEN + "Hash from uploaded Image: ",
+		      Fore.YELLOW + "{}".format(hash2))
+		print(Fore.GREEN + "Hash difference: ",
+		      Fore.YELLOW + "{}".format(hash1 - hash2))
+		if comb == 0:
+			print(Fore.GREEN + "The file you uploaded is",
+			      Fore.RED + " {}".format(o[1].replace(".jpg", "")))
 
 	if len(options) < 1:
 		print("File was less the a {}% match".format(p1*100))
@@ -94,9 +154,10 @@ def compare1(img, p1):
 		for a in as1:
 			print("\t--+ {} with {} entries.".format(a, config.number_of_images[a]))
 
-
 # check the simularity between two strings
 # credit: https://stackoverflow.com/questions/17388213/find-the-similarity-metric-between-two-strings
+
+
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
@@ -109,25 +170,136 @@ def all_img():
 	del data
 	return card_names
 
+# remote card testing with requests
+
+
+def get_remote_card(url):
+	im = Image.open(requests.get(url, stream=True).raw)
+	return im
+
+# check if the url is good
+
+
+def check_url(url):
+	stat_code = requests.get(url)
+	return stat_code.status_code
+
+
+"""
+check if percent entered is:
+	-+ equal or less 100 but not more
+	-+ over 0.001
+	-+ not a string
+"""
+
+
+def check_percent(per):
+	try:
+		per = float(per)
+		if per <= 100:
+			if per > 0:
+				return True
+			else:
+				return "The percent can't be 0 or less, Exiting."
+		else:
+			return "The percent can't be over 100, Exiting."
+	except:
+		return "The percent can't be a string, Exiting."
+
+# make sure the file type is acceptable
+
+
+def check_file_type(f1):
+	# good file types for imgs
+	good_file_types = [
+		'jpg',
+		'jpeg',
+		'png'
+	]
+	file_type = os.path.splitext(f1)[1][1:]
+	if file_type in good_file_types:
+		return True
+	else:
+		return "{} is not acceptable image type!".format(file_type)
+
 
 def main():
-	#img = str(sys.argv[1])  # user inputed file name
+	# break from the command some
+	print("\n")
+
+	# display the ascii title
+	pt1()
+
+	print(Fore.GREEN + "Starting the search:")
+
 	parser = argparse.ArgumentParser(
 		description='Arguments for the MTG Card Identifier.')
 	parser.add_argument(
 		'-img', '--Image', help='Insert path to the Image here.', required=True)
 	parser.add_argument(
 		'-p', '--Percent', help='Enter the percent you want the comparison to be [whole numbers].', required=False, default=72)
+	parser.add_argument(
+		'-url', '--URL', help='Tell the script that the -img is a url. Usage [ -url y ]', required=False, default='n')
 	argument = parser.parse_args()
-	img = str(argument.Image)  # user inputed file name
-	head, tail = os.path.split(img)
-	percent = float(argument.Percent/100)
-	print("Checking {}".format(tail))
-	del head, tail
-	img = Image.open(img)
-	img = change_color(img)
-	img = crop_image(img)
-	compare1(img, percent)
+
+	# check if an image is an link or a path
+	if argument.URL == 'n':
+		# check the file type
+		if check_file_type(argument.Image) == True:
+			img = str(argument.Image)  # user inputed file name
+			head, tail = os.path.split(img)
+			del head
+			img = Image.open(img)
+			og_image = img
+
+			# check percent
+			if check_percent(argument.Percent) == True:
+				print(Fore.GREEN + "Checking File:",
+				      Fore.LIGHTBLUE_EX + " {}".format(tail))
+				percent = float(float(argument.Percent)/float(100))
+				img = change_color(img)
+				img = crop_image(img)
+				compare1(img, percent, og_image)
+
+			else:
+				print("\n\n")
+				dis_error()
+				print(Fore.RED + check_percent(argument.Percent).center(os.get_terminal_size().columns))
+				dis_error_end()
+		else:
+			dis_error()
+			print(Fore.RED + check_file_type(argument.Image).center(os.get_terminal_size().columns))
+			dis_error_end()
+
+	elif argument.URL == 'y':
+		# this tru
+		try:
+			if int(check_url(argument.Image)) == 200:
+				img = get_remote_card(argument.Image)
+				og_image = img
+
+				# check percent
+				if check_percent(argument.Percent) == True:
+					print("Checking URL: {}".format(argument.Image))
+					percent = float(float(argument.Percent)/float(100))
+
+					img = change_color(img)
+					img = crop_image(img)
+					compare1(img, percent, og_image)
+
+				else:
+					dis_error()
+					print(Fore.RED + check_percent(argument.Percent).center(os.get_terminal_size().columns))
+					dis_error_end()
+
+			else:
+				dis_error()
+				print('Bad URL returned a {} code. Exiting.'.format(check_url(argument.Image)))
+				dis_error_end()
+		except:
+			dis_error()
+			print('Bad URL returned a {} code. Exiting.'.format(check_url(argument.Image)))
+			dis_error_end()
 
 
 if __name__ == "__main__":

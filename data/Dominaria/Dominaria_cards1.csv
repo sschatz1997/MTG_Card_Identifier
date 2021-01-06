@@ -1,0 +1,281 @@
+id,card_name
+1,"Karn, Scion of Urza"
+2,Adamant Will
+3,Aven Sentry
+4,"Baird, Steward of Argive"
+5,Benalish Honor Guard
+6,Benalish Marshal
+7,Blessed Light
+8,Board the Weatherlight
+9,Call the Cavalry
+10,Charge
+11,D'Avenant Trapper
+12,"Danitha Capashen, Paragon"
+13,Daring Archaeologist
+14,Dauntless Bodyguard
+15,Dub
+16,"Evra, Halcyon Witness"
+17,Excavation Elephant
+18,Fall of the Thran
+19,Gideon's Reproach
+20,Healing Grace
+21,History of Benalia
+22,Invoke the Divine
+23,Knight of Grace
+24,Knight of New Benalia
+25,"Kwende, Pride of Femeref"
+26,Lyra Dawnbringer
+27,Mesa Unicorn
+28,On Serra's Wings
+29,Pegasus Courser
+30,Sanctum Spirit
+31,Seal Away
+32,Sergeant-at-Arms
+33,Serra Angel
+34,Serra Disciple
+35,"Shalai, Voice of Plenty"
+36,"Teshar, Ancestor's Apostle"
+37,Tragic Poet
+38,Triumph of Gerrard
+39,Urza's Ruinous Blast
+40,Academy Drake
+41,Academy Journeymage
+42,The Antiquities War
+43,Arcane Flight
+44,Artificer's Assistant
+45,Befuddle
+46,Blink of an Eye
+47,Cloudreader Sphinx
+48,Cold-Water Snapper
+49,Curator's Ward
+50,Deep Freeze
+51,Diligent Excavator
+52,Divination
+53,Homarid Explorer
+54,In Bolas's Clutches
+55,Karn's Temporal Sundering
+56,Merfolk Trickster
+57,The Mirari Conjecture
+58,"Naban, Dean of Iteration"
+59,"Naru Meha, Master Wizard"
+60,Opt
+61,Precognition Field
+62,Relic Runner
+63,Rescue
+64,Sage of Lat-Nam
+65,Sentinel of the Pearl Trident
+66,"Slinn Voda, the Rising Deep"
+67,Syncopate
+68,Tempest Djinn
+69,"Tetsuko Umezawa, Fugitive"
+70,Time of Ice
+71,Tolarian Scholar
+72,Unwind
+73,Vodalian Arcanist
+74,Weight of Memory
+75,Wizard's Retort
+76,"Zahid, Djinn of the Lamp"
+77,Blessing of Belzenlok
+78,Cabal Evangel
+79,Cabal Paladin
+80,Caligo Skin-Witch
+81,Cast Down
+82,Chainer's Torment
+83,Dark Bargain
+84,Deathbloom Thallid
+85,Demonic Vigor
+86,Demonlord Belzenlok
+87,Divest
+88,Dread Shade
+89,Drudge Sentinel
+90,The Eldest Reborn
+91,Eviscerate
+92,Feral Abomination
+93,Final Parting
+94,Fungal Infection
+95,"Josu Vess, Lich Knight"
+96,"Kazarov, Sengir Pureblood"
+97,Knight of Malice
+98,Lich's Mastery
+99,Lingering Phantom
+100,Phyrexian Scriptures
+101,Rat Colony
+102,Rite of Belzenlok
+103,Settle the Score
+104,Soul Salvage
+105,Stronghold Confessor
+106,Thallid Omnivore
+107,Thallid Soothsayer
+108,"Torgaar, Famine Incarnate"
+109,"Urgoros, the Empty One"
+110,Vicious Offering
+111,"Whisper, Blood Liturgist"
+112,Windgrace Acolyte
+113,"Yargle, Glutton of Urborg"
+114,Yawgmoth's Vile Offering
+115,Bloodstone Goblin
+116,Champion of the Flame
+117,Fervent Strike
+118,Fiery Intervention
+119,Fight with Fire
+120,Fire Elemental
+121,Firefist Adept
+122,The First Eruption
+123,The Flame of Keld
+124,Frenzied Rage
+125,Ghitu Chronicler
+126,Ghitu Journeymage
+127,Ghitu Lavarunner
+128,Goblin Barrage
+129,Goblin Chainwhirler
+130,Goblin Warchief
+131,Haphazard Bombardment
+132,Jaya Ballard
+133,Jaya's Immolating Inferno
+134,Keldon Overseer
+135,Keldon Raider
+136,Keldon Warcaller
+137,Orcish Vandal
+138,Radiating Lightning
+139,Rampaging Cyclops
+140,Run Amok
+141,Seismic Shift
+142,Shivan Fire
+143,Siege-Gang Commander
+144,Skirk Prospector
+145,Skizzik
+146,"Squee, the Immortal"
+147,Two-Headed Giant
+148,"Valduk, Keeper of the Flame"
+149,Verix Bladewing
+150,Warcry Phoenix
+151,Warlord's Fury
+152,Wizard's Lightning
+153,Adventurous Impulse
+154,Ancient Animus
+155,Arbor Armament
+156,Baloth Gorger
+157,Broken Bond
+158,Corrosive Ooze
+159,Elfhame Druid
+160,Fungal Plots
+161,Gaea's Blessing
+162,Gaea's Protector
+163,Gift of Growth
+164,Grow from the Ashes
+165,"Grunn, the Lonely King"
+166,Kamahl's Druidic Vow
+167,Krosan Druid
+168,Llanowar Elves
+169,Llanowar Envoy
+170,Llanowar Scout
+171,Mammoth Spider
+172,"Marwyn, the Nurturer"
+173,The Mending of Dominaria
+174,"Multani, Yavimaya's Avatar"
+175,Nature's Spiral
+176,Pierce the Sky
+177,Primordial Wurm
+178,Saproling Migration
+179,Song of Freyalise
+180,Spore Swarm
+181,Sporecrown Thallid
+182,Steel Leaf Champion
+183,Sylvan Awakening
+184,Territorial Allosaurus
+185,Thorn Elemental
+186,Untamed Kavu
+187,Verdant Force
+188,Wild Onslaught
+189,Yavimaya Sapherd
+190,"Adeliz, the Cinder Wind"
+191,Arvad the Cursed
+192,"Aryel, Knight of Windgrace"
+193,Darigaaz Reincarnated
+194,"Garna, the Bloodflame"
+195,Grand Warlord Radha
+196,"Hallar, the Firefletcher"
+197,"Jhoira, Weatherlight Captain"
+198,"Jodah, Archmage Eternal"
+199,"Muldrotha, the Gravetide"
+200,Oath of Teferi
+201,Primevals' Glorious Rebirth
+202,"Raff Capashen, Ship's Mage"
+203,"Rona, Disciple of Gix"
+204,"Shanna, Sisay's Legacy"
+205,"Slimefoot, the Stowaway"
+206,"Tatyova, Benthic Druid"
+207,"Teferi, Hero of Dominaria"
+208,"Tiana, Ship's Caretaker"
+209,Aesthir Glider
+210,Amaranthine Wall
+211,Blackblade Reforged
+212,Bloodtallow Candle
+213,Damping Sphere
+214,Forebear's Blade
+215,Gilded Lotus
+216,Guardians of Koilos
+217,Helm of the Host
+218,Howling Golem
+219,Icy Manipulator
+220,Jhoira's Familiar
+221,Jousting Lance
+222,Juggernaut
+223,Mishra's Self-Replicator
+224,Mox Amber
+225,Navigator's Compass
+226,Pardic Wanderer
+227,Powerstone Shard
+228,Shield of the Realm
+229,Short Sword
+230,Skittering Surveyor
+231,Sorcerer's Wand
+232,Sparring Construct
+233,Thran Temporal Gateway
+234,"Traxos, Scourge of Kroog"
+235,Urza's Tome
+236,Voltaic Servant
+237,Weatherlight
+238,Cabal Stronghold
+239,Clifftop Retreat
+240,Hinterland Harbor
+241,Isolated Chapel
+242,Memorial to Folly
+243,Memorial to Genius
+244,Memorial to Glory
+245,Memorial to Unity
+246,Memorial to War
+247,Sulfur Falls
+248,Woodland Cemetery
+249,Zhalfirin Void
+250,Plains
+251,Plains
+252,Plains
+253,Plains
+254,Island
+255,Island
+256,Island
+257,Island
+258,Swamp
+259,Swamp
+260,Swamp
+261,Swamp
+262,Mountain
+263,Mountain
+264,Mountain
+265,Mountain
+266,Forest
+267,Forest
+268,Forest
+269,Forest
+270,"Teferi, Timebender"
+271,Temporal Machinations
+272,"Niambi, Faithful Healer"
+273,Teferi's Sentinel
+274,Meandering River
+275,"Chandra, Bold Pyromancer"
+276,Chandra's Outburst
+277,Karplusan Hound
+278,Pyromantic Pilgrim
+279,Timber Gorge
+280,Firesong and Sunspeaker

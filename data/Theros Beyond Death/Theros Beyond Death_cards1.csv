@@ -1,0 +1,359 @@
+id,card_name
+1,Alseid of Life's Bounty
+2,Archon of Falling Stars
+3,Archon of Sun's Grace
+4,Banishing Light
+5,The Birth of Meletis
+6,Captivating Unicorn
+7,Commanding Presence
+8,Dawn Evangel
+9,"Daxos, Blessed by the Sun"
+10,Daybreak Chimera
+11,Dreadful Apathy
+12,Eidolon of Obstruction
+13,Elspeth Conquers Death
+14,"Elspeth, Sun's Nemesis"
+15,Favored of Iroas
+16,Flicker of Fate
+17,Glory Bearers
+18,"Heliod, Sun-Crowned"
+19,Heliod's Intervention
+20,Heliod's Pilgrim
+21,Heliod's Punishment
+22,Hero of the Pride
+23,Hero of the Winds
+24,Idyllic Tutor
+25,Indomitable Will
+26,Karametra's Blessing
+27,Lagonna-Band Storyteller
+28,Leonin of the Lost Pride
+29,Nyxborn Courser
+30,Omen of the Sun
+31,Phalanx Tactics
+32,Pious Wayfarer
+33,Reverent Hoplite
+34,Revoke Existence
+35,Rumbling Sentry
+36,Sentinel's Eyes
+37,Shatter the Sky
+38,Sunmane Pegasus
+39,"Taranika, Akroan Veteran"
+40,Transcendent Envoy
+41,Triumphant Surge
+42,"Alirios, Enraptured"
+43,Ashiok's Erasure
+44,Brine Giant
+45,"Callaphe, Beloved of the Sea"
+46,Chain to Memory
+47,Deny the Divine
+48,Eidolon of Philosophy
+49,Elite Instructor
+50,Glimpse of Freedom
+51,Ichthyomorphosis
+52,Kiora Bests the Sea God
+53,Medomai's Prophecy
+54,Memory Drain
+55,Nadir Kraken
+56,Naiad of Hidden Coves
+57,Nyxborn Seaguard
+58,Omen of the Sea
+59,One with the Stars
+60,Protean Thaumaturge
+61,Riptide Turtle
+62,Sage of Mysteries
+63,Sea God's Scorn
+64,Shimmerwing Chimera
+65,Shoal Kraken
+66,Sleep of the Dead
+67,Starlit Mantle
+68,Stern Dismissal
+69,Stinging Lionfish
+70,Sweet Oblivion
+71,"Thassa, Deep-Dwelling"
+72,Thassa's Intervention
+73,Thassa's Oracle
+74,Thirst for Meaning
+75,Threnody Singer
+76,"Thryx, the Sudden Storm"
+77,Towering-Wave Mystic
+78,Triton Waverider
+79,Vexing Gull
+80,Wavebreak Hippocamp
+81,Whirlwind Denial
+82,Witness of Tomorrows
+83,Agonizing Remorse
+84,"Aphemia, the Cacophony"
+85,Aspect of Lamprey
+86,Blight-Breath Catoblepas
+87,Cling to Dust
+88,Discordant Piper
+89,Drag to the Underworld
+90,Eat to Extinction
+91,Elspeth's Nightmare
+92,Enemy of Enlightenment
+93,"Erebos, Bleak-Hearted"
+94,Erebos's Intervention
+95,Final Death
+96,Fruit of Tizerus
+97,Funeral Rites
+98,Gravebreaker Lamia
+99,Gray Merchant of Asphodel
+100,Grim Physician
+101,Hateful Eidolon
+102,Inevitable End
+103,Lampad of Death's Vigil
+104,Minion's Return
+105,Mire Triton
+106,Mire's Grasp
+107,Mogis's Favor
+108,Nightmare Shepherd
+109,Nyxborn Marauder
+110,Omen of the Dead
+111,Pharika's Libation
+112,Pharika's Spawn
+113,Rage-Scarred Berserker
+114,Scavenging Harpy
+115,Soulreaper of Mogis
+116,Temple Thief
+117,Treacherous Blessing
+118,Tymaret Calls the Dead
+119,"Tymaret, Chosen from Death"
+120,Underworld Charger
+121,Underworld Dreams
+122,Venomous Hierophant
+123,Woe Strider
+124,The Akroan War
+125,"Anax, Hardened in the Forge"
+126,Arena Trickster
+127,Aspect of Manticore
+128,Blood Aspirant
+129,Careless Celebrant
+130,Dreamshaper Shaman
+131,Dreamstalker Manticore
+132,Escape Velocity
+133,Fateful End
+134,Final Flare
+135,Flummoxed Cyclops
+136,Furious Rise
+137,Hero of the Games
+138,Heroes of the Revel
+139,Impending Doom
+140,Incendiary Oracle
+141,Infuriate
+142,Iroas's Blessing
+143,Irreverent Revelers
+144,Nyxborn Brute
+145,Omen of the Forge
+146,Oread of Mountain's Blaze
+147,Ox of Agonas
+148,Phoenix of Ash
+149,Portent of Betrayal
+150,"Purphoros, Bronze-Blooded"
+151,Purphoros's Intervention
+152,Satyr's Cunning
+153,Skophos Maze-Warden
+154,Skophos Warleader
+155,Stampede Rider
+156,Storm Herald
+157,Storm's Wrath
+158,Tectonic Giant
+159,Thrill of Possibility
+160,The Triumph of Anax
+161,Underworld Breach
+162,Underworld Fires
+163,Underworld Rage-Hound
+164,Wrap in Flames
+165,Arasta of the Endless Web
+166,The Binding of the Titans
+167,Chainweb Aracnir
+168,Destiny Spinner
+169,Dryad of the Ilysian Grove
+170,The First Iroan Games
+171,Gift of Strength
+172,Hydra's Growth
+173,Hyrax Tower Scout
+174,Ilysian Caryatid
+175,Inspire Awe
+176,Klothys's Design
+177,Loathsome Chimera
+178,Mantle of the Wolf
+179,Moss Viper
+180,Mystic Repeal
+181,Nessian Boar
+182,Nessian Hornbeetle
+183,Nessian Wanderer
+184,Nexus Wardens
+185,"Nylea, Keen-Eyed"
+186,Nylea's Forerunner
+187,Nylea's Huntmaster
+188,Nylea's Intervention
+189,Nyx Herald
+190,Nyxbloom Ancient
+191,Nyxborn Colossus
+192,Omen of the Hunt
+193,Pheres-Band Brawler
+194,Plummet
+195,Relentless Pursuit
+196,"Renata, Called to the Hunt"
+197,Return to Nature
+198,Setessan Champion
+199,Setessan Petitioner
+200,Setessan Skirmisher
+201,Setessan Training
+202,Skola Grovedancer
+203,Voracious Typhon
+204,Warbriar Blessing
+205,Wolfwillow Haven
+206,Acolyte of Affliction
+207,Allure of the Unknown
+208,"Ashiok, Nightmare Muse"
+209,"Atris, Oracle of Half-Truths"
+210,Bronzehide Lion
+211,"Calix, Destiny's Hand"
+212,"Dalakos, Crafter of Wonders"
+213,Devourer of Memory
+214,Dream Trawler
+215,Enigmatic Incarnation
+216,Eutropia the Twice-Favored
+217,Gallia of the Endless Dance
+218,Haktos the Unscarred
+219,Hero of the Nyxborn
+220,"Klothys, God of Destiny"
+221,"Kroxa, Titan of Death's Hunger"
+222,"Kunoros, Hound of Athreos"
+223,Mischievous Chimera
+224,"Polukranos, Unchained"
+225,Rise to Glory
+226,"Siona, Captain of the Pyleas"
+227,Slaughter-Priest of Mogis
+228,Staggering Insight
+229,"Uro, Titan of Nature's Wrath"
+230,Warden of the Chained
+231,Altar of the Pantheon
+232,Bronze Sword
+233,Entrancing Lyre
+234,Mirror Shield
+235,Nyx Lotus
+236,Shadowspear
+237,Soul-Guide Lantern
+238,Thaumaturge's Familiar
+239,Thundering Chariot
+240,Traveler's Amulet
+241,Wings of Hubris
+242,Field of Ruin
+243,Labyrinth of Skophos
+244,Temple of Abandon
+245,Temple of Deceit
+246,Temple of Enlightenment
+247,Temple of Malice
+248,Temple of Plenty
+249,Unknown Shores
+250,Plains
+251,Island
+252,Swamp
+253,Mountain
+254,Forest
+255,"Elspeth, Sun's Nemesis"
+256,"Ashiok, Nightmare Muse"
+257,"Calix, Destiny's Hand"
+258,"Daxos, Blessed by the Sun"
+259,"Heliod, Sun-Crowned"
+260,"Callaphe, Beloved of the Sea"
+261,"Thassa, Deep-Dwelling"
+262,"Erebos, Bleak-Hearted"
+263,"Tymaret, Chosen from Death"
+264,"Anax, Hardened in the Forge"
+265,"Purphoros, Bronze-Blooded"
+266,"Nylea, Keen-Eyed"
+267,"Renata, Called to the Hunt"
+268,"Klothys, God of Destiny"
+269,"Athreos, Shroud-Veiled"
+270,"Elspeth, Undaunted Hero"
+271,Eidolon of Inspiration
+272,Elspeth's Devotee
+273,Sunlit Hoplite
+274,"Ashiok, Sculptor of Fears"
+275,Swimmer in Nightmares
+276,Mindwrack Harpy
+277,Ashiok's Forerunner
+278,Plains
+279,Plains
+280,Island
+281,Island
+282,Swamp
+283,Swamp
+284,Mountain
+285,Mountain
+286,Forest
+287,Forest
+288,Grasping Giant
+289,Victory's Envoy
+290,Sphinx Mindbreaker
+291,Serpent of Yawning Depths
+292,Demon of Loathing
+293,Underworld Sentinel
+294,Deathbellow War Cry
+295,Terror of Mount Velus
+296,Ironscale Hydra
+297,Treeshaker Chimera
+298,Archon of Sun's Grace
+299,Eidolon of Obstruction
+300,Heliod's Intervention
+301,Idyllic Tutor
+302,Shatter the Sky
+303,"Taranika, Akroan Veteran"
+304,Ashiok's Erasure
+305,Nadir Kraken
+306,Protean Thaumaturge
+307,Thassa's Intervention
+308,Thassa's Oracle
+309,"Thryx, the Sudden Storm"
+310,Wavebreak Hippocamp
+311,"Aphemia, the Cacophony"
+312,Eat to Extinction
+313,Erebos's Intervention
+314,Gravebreaker Lamia
+315,Nightmare Shepherd
+316,Treacherous Blessing
+317,Woe Strider
+318,Ox of Agonas
+319,Phoenix of Ash
+320,Purphoros's Intervention
+321,Storm Herald
+322,Storm's Wrath
+323,Tectonic Giant
+324,Underworld Breach
+325,Arasta of the Endless Web
+326,Dryad of the Ilysian Grove
+327,Mantle of the Wolf
+328,Nessian Boar
+329,Nylea's Intervention
+330,Nyxbloom Ancient
+331,Setessan Champion
+332,Allure of the Unknown
+333,"Atris, Oracle of Half-Truths"
+334,Bronzehide Lion
+335,"Dalakos, Crafter of Wonders"
+336,Dream Trawler
+337,Enigmatic Incarnation
+338,Gallia of the Endless Dance
+339,Haktos the Unscarred
+340,"Kroxa, Titan of Death's Hunger"
+341,"Kunoros, Hound of Athreos"
+342,"Polukranos, Unchained"
+343,"Uro, Titan of Nature's Wrath"
+344,Nyx Lotus
+345,Shadowspear
+346,Labyrinth of Skophos
+347,Temple of Abandon
+348,Temple of Abandon
+349,Temple of Deceit
+350,Temple of Enlightenment
+351,Temple of Malice
+352,Temple of Plenty
+353,Arasta of the Endless Web
+354,Alseid of Life's Bounty
+355,Thirst for Meaning
+356,Gray Merchant of Asphodel
+357,Thrill of Possibility
+358,Wolfwillow Haven

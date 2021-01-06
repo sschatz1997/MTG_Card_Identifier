@@ -13,7 +13,13 @@ if sys.platform == "win32":
 		data + 'Throne of Eldraine\\imgs\\',
 		data + "Ikoria Lair of Behemoths\\imgs\\",
 		data + "Zendikar Rising\\imgs\\",
-		data + "Zendikar\\imgs\\"
+		data + "Zendikar\\imgs\\",
+		data + "Theros Beyond Death\\imgs\\",
+		data + 'Dominaria\\imgs\\',
+		data + 'Ixalan\\imgs\\',
+		data + 'Hour of Devastation\\imgs\\',
+		data + 'Amonkhet\\imgs\\',
+		data + 'Aether Revolt\\imgs\\'
 	]
 	master_cards = main_path + "master_imgs.csv"
 	
@@ -28,26 +34,45 @@ elif sys.platform == "linux":
 		data + 'Throne of Eldraine/imgs/',
 		data + "Ikoria Lair of Behemoths/imgs/",
 		data + "Zendikar Rising/imgs/",
-		data + "Zendikar/imgs/"
+		data + "Zendikar/imgs/",
+		data + 'Theros Beyond Death/imgs/',
+		data + 'Dominaria/imgs/',
+		data + 'Ixalan/imgs/',
+		data + 'Hour of Devastation/imgs/',
+		data + 'Amonkhet/imgs/',
+		data + 'Aether Revolt/imgs/'
 	]
 
 
+# set lists
 active_sets = [
-	'Ravnica Allegiance',
+	'Aether Revolt',
+	'Amonkhet',
+	'Dominaria',
 	'Guilds of Ravnica',
-	'Throne of Eldraine',
+	'Hour of Devastation',
 	'Ikoria Lair of Behemoths',
-	'Zendikar Rising',
-	'Zendikar'
+	'Ixalan',
+	'Ravnica Allegiance',
+	'Theros Beyond Death',
+	'Throne of Eldraine',
+	'Zendikar',
+	'Zendikar Rising'
 ]
 
 number_of_images = {
-	'Ravnica Allegiance': 256,
+	'Aether Revolt': 54,
+	'Amonkhet': 78,
+	'Dominaria': 132,
     'Guilds of Ravnica': 176,
-	'Throne of Eldraine': 178,
+	'Hour of Devastation': 115,
+	'Ixalan': 264,
 	'Ikoria Lair of Behemoths': 163,
-	'Zendikar Rising': 231,
-	'Zendikar':229
+	'Ravnica Allegiance': 256,
+	'Theros Beyond Death': 223,
+	'Throne of Eldraine': 178,
+	'Zendikar': 229,
+	'Zendikar Rising': 231
 }
 
 # headers

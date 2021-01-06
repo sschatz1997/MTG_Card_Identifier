@@ -1,0 +1,220 @@
+id,card_name
+1,Act of Heroism
+2,Adorned Pouncer
+3,Angel of Condemnation
+4,Angel of the God-Pharaoh
+5,Aven of Enduring Hope
+6,Crested Sunmare
+7,Dauntless Aven
+8,Desert's Hold
+9,Disposal Mummy
+10,"Djeru, With Eyes Open"
+11,Djeru's Renunciation
+12,Dutiful Servants
+13,Gideon's Defeat
+14,God-Pharaoh's Faithful
+15,Hour of Revelation
+16,Mummy Paramount
+17,Oketra's Avenger
+18,Oketra's Last Mercy
+19,Overwhelming Splendor
+20,Sandblast
+21,Saving Grace
+22,Solemnity
+23,Solitary Camel
+24,Steadfast Sentinel
+25,Steward of Solidarity
+26,Sunscourge Champion
+27,Unconventional Tactics
+28,Vizier of the True
+29,Aerial Guide
+30,Aven Reedstalker
+31,Champion of Wits
+32,Countervailing Winds
+33,Cunning Survivor
+34,Eternal of Harsh Truths
+35,Fraying Sanity
+36,Hour of Eternity
+37,Imaginary Threats
+38,Jace's Defeat
+39,Kefnet's Last Word
+40,Nimble Obstructionist
+41,Ominous Sphinx
+42,Proven Combatant
+43,Riddleform
+44,Seer of the Last Tomorrow
+45,Sinuous Striker
+46,Spellweaver Eternal
+47,Strategic Planning
+48,Striped Riverwinder
+49,Supreme Will
+50,Swarm Intelligence
+51,Tragic Lesson
+52,"Unesh, Criosphinx Sovereign"
+53,Unquenchable Thirst
+54,Unsummon
+55,Vizier of the Anointed
+56,Accursed Horde
+57,Ammit Eternal
+58,Apocalypse Demon
+59,Banewhip Punisher
+60,Bontu's Last Reckoning
+61,Carrion Screecher
+62,Doomfall
+63,Dreamstealer
+64,Grisly Survivor
+65,Hour of Glory
+66,Khenra Eternal
+67,Lethal Sting
+68,Liliana's Defeat
+69,Lurching Rotbeast
+70,Marauding Boneslasher
+71,Merciless Eternal
+72,Moaning Wall
+73,"Razaketh, the Foulblooded"
+74,Razaketh's Rite
+75,Ruin Rat
+76,Scrounger of Souls
+77,Torment of Hailfire
+78,Torment of Scarabs
+79,Torment of Venom
+80,Vile Manifestation
+81,Without Weakness
+82,Wretched Camel
+83,Abrade
+84,Blur of Blades
+85,Burning-Fist Minotaur
+86,Chandra's Defeat
+87,Chaos Maw
+88,Crash Through
+89,Defiant Khenra
+90,Earthshaker Khenra
+91,Fervent Paincaster
+92,Firebrand Archer
+93,Frontline Devastator
+94,Gilded Cerodon
+95,Granitic Titan
+96,Hazoret's Undying Fury
+97,Hour of Devastation
+98,Imminent Doom
+99,Inferno Jet
+100,Khenra Scrapper
+101,Kindled Fury
+102,Magmaroth
+103,Manticore Eternal
+104,"Neheb, the Eternal"
+105,Open Fire
+106,Puncturing Blow
+107,Sand Strangler
+108,Thorned Moloch
+109,Wildfire Eternal
+110,Ambuscade
+111,Beneath the Sands
+112,Bitterbow Sharpshooters
+113,Devotee of Strength
+114,Dune Diviner
+115,Feral Prowler
+116,Frilled Sandwalla
+117,Gift of Strength
+118,Harrier Naga
+119,Hope Tender
+120,Hour of Promise
+121,Life Goes On
+122,Majestic Myriarch
+123,Nissa's Defeat
+124,Oasis Ritualist
+125,Overcome
+126,Pride Sovereign
+127,Quarry Beetle
+128,Rampaging Hippo
+129,Ramunap Excavator
+130,Ramunap Hydra
+131,Resilient Khenra
+132,Rhonas's Last Stand
+133,Rhonas's Stalwart
+134,Sidewinder Naga
+135,Sifter Wurm
+136,Tenacious Hunter
+137,Uncage the Menagerie
+138,Bloodwater Entity
+139,The Locust God
+140,"Nicol Bolas, God-Pharaoh"
+141,Obelisk Spider
+142,Resolute Survivors
+143,River Hoopoe
+144,"Samut, the Tested"
+145,The Scarab God
+146,The Scorpion God
+147,Unraveling Mummy
+148,Farm // Market
+149,Farm // Market
+150,Consign // Oblivion
+151,Consign // Oblivion
+152,Claim // Fame
+153,Claim // Fame
+154,Struggle // Survive
+155,Struggle // Survive
+156,Appeal // Authority
+157,Appeal // Authority
+158,Leave // Chance
+159,Leave // Chance
+160,Reason // Believe
+161,Reason // Believe
+162,Grind // Dust
+163,Grind // Dust
+164,Refuse // Cooperate
+165,Refuse // Cooperate
+166,Driven // Despair
+167,Driven // Despair
+168,Abandoned Sarcophagus
+169,Crook of Condemnation
+170,Dagger of the Worthy
+171,God-Pharaoh's Gift
+172,Graven Abomination
+173,Hollow One
+174,Manalith
+175,Mirage Mirror
+176,Sunset Pyramid
+177,Traveler's Amulet
+178,Wall of Forgotten Pharaohs
+179,Crypt of the Eternals
+180,Desert of the Fervent
+181,Desert of the Glorified
+182,Desert of the Indomitable
+183,Desert of the Mindful
+184,Desert of the True
+185,Dunes of the Dead
+186,Endless Sands
+187,Hashep Oasis
+188,Hostile Desert
+189,Ifnir Deadlands
+190,Ipnu Rivulet
+191,Ramunap Ruins
+192,Scavenger Grounds
+193,Shefet Dunes
+194,Survivors' Encampment
+195,Plains
+196,Island
+197,Swamp
+198,Mountain
+199,Forest
+200,Plains
+201,Plains
+202,Island
+203,Island
+204,Swamp
+205,Swamp
+206,Mountain
+207,Mountain
+208,Forest
+209,Forest
+210,"Nissa, Genesis Mage"
+211,Avid Reclaimer
+212,Brambleweft Behemoth
+213,Nissa's Encouragement
+214,Woodland Stream
+215,"Nicol Bolas, the Deceiver"
+216,Wasp of the Bitter End
+217,Zealot of the God-Pharaoh
+218,Visage of Bolas
+219,Cinder Barrens
