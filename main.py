@@ -303,7 +303,7 @@ def main():
 	requiredArgs.add_argument('-img', '--Image', help='Insert path to the Image here.', required=True)
 	parser.add_argument('-p', '--Percent', help='Enter the percent you want the comparison to be [whole numbers].', required=False, default=72)
 	parser.add_argument('-url', '--URL', help='Tell the script that the -img is a url. Usage [ -url y ]', required=False, default='n')
-	parser.add_argument('-num', '--Num', help='Just one of the possible or all of the [ one or all ]', required=False, default='one')
+	parser.add_argument('-num', '--Num', help='Just one of the possible cards or all of the cards within the percentage match. [ one or all ]', required=False, default='one')
 	argument = parser.parse_args()
 
 	# check if an image is an link or a path

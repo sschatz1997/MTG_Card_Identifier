@@ -22,7 +22,7 @@ $ sudo sh install.sh
 
 ## Usage 
 ```
-$ python3 -img IMAGE  [-p PERCENT] [-url URL]
+$ python3 -img IMAGE [-p PERCENT] [-url URL] [-num NUM]
 
 MTG_Card_Identifier: Find magic cards based on the Name on the card.
  
@@ -31,6 +31,8 @@ Optional arguments:
   -p PERCENT, --Percent PERCENT
                         Enter the percent you want the comparison to be [whole numbers].
   -url URL, --URL URL   Tell the script that the -img is a url. Usage [ -url y ]
+  -num NUM, --Num NUM   Just one of the possible cards or all of the cards within the percentage match. [ one or
+                        all ]
   
 required named arguments:
   -img IMAGE, --Image IMAGE
