@@ -3,28 +3,38 @@
 [![Build Status](https://travis-ci.org/sschatz1997/MTG_Card_Identifier.png?branch=main)](https://travis-ci.org/{{sschatz1997}}/{{MTG_Card_Identifier}})
 # MTG_Card_Identifier
 
-MTG_Card_Identifier is a python based program to identify Magic: The Gathering cards based on their title.
+MTG_Card_Identifier is a python based program to identify Magic: The Gathering cards based on the Card name in the image that the user uploads.
 
 ## Installation
 
 ### Linux 
-- Run the install.sh script
+```
+# Run the install.sh script
+$ sudo sh install.sh
+```
 
 ### Windows 
 - Run:
 ```
-pip3 install -r requirements.txt
+> pip3 install -r requirements.txt
 ```
 - May have to install Tesseract from [here](https://github.com/UB-Mannheim/tesseract/wiki)
 
 ## Usage 
 ```
-$ python3 -img [ image ] -p [ percent of matching you want ]
+$ python3 -img IMAGE  [-p PERCENT] [-url URL]
+
+MTG_Card_Identifier: Find magic cards based on the Name on the card.
+ 
+Optional arguments:
   -h, --help            show this help message and exit
-  -img IMAGE, --Image IMAGE
-                        Insert path to the Image here.
   -p PERCENT, --Percent PERCENT
                         Enter the percent you want the comparison to be [whole numbers].
+  -url URL, --URL URL   Tell the script that the -img is a url. Usage [ -url y ]
+  
+required named arguments:
+  -img IMAGE, --Image IMAGE
+                        Insert path local or remote.
 ```
 
 ## Requirements
