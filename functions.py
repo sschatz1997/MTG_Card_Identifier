@@ -1,5 +1,7 @@
 # functions.py
 
+import os
+import sys
 import config
 import imagehash
 import pandas as pd
@@ -27,10 +29,17 @@ def get_set_by_card_name1(card):
 
 	return set1[place]
 
+# get image path per os
+def img_path():
+	if sys.platform == "win32":
+		return "\\imgs\\"
+	elif sys.platform == "linux":
+		return "/imgs/"
+
 # compare file by hash
 def image_comapre_hash(name, imported):
 	from_set = get_set_by_card_name1(name.replace(".jpg", ""))
-	file1 = config.data + from_set + "\\imgs\\" + name + ".jpg"
+	file1 = config.data + from_set + img_path() + name + ".jpg"
 	hash1 = imagehash.average_hash(Image.open(file1))
 	hash2 = imagehash.average_hash(imported)
 	return hash1, hash2 

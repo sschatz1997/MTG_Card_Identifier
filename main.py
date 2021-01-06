@@ -1,5 +1,4 @@
 # main.py
-from functions import get_all_cards, get_set_by_card_name1, image_comapre_hash
 import os
 import cv2
 import sys
@@ -14,24 +13,24 @@ from PIL import Image
 from progress.bar import Bar
 from difflib import SequenceMatcher
 from colorama import init, Fore, Back, Style
-init(convert=True, autoreset=True)
 
 # my functions
-
+from functions import get_all_cards, get_set_by_card_name1, image_comapre_hash
 
 # import pytesseract for windows or linux
 if sys.platform == "win32":
 	import pytesseract
 	pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+	init(convert=True, autoreset=True)  # only this init works on windows
 elif sys.platform == "linux":
 	from pytesseract import image_to_string
+	init(autoreset=True)
+
 
 """
 pretty title 1
 less then 150 pixel length for the title means that it will be stack and if not then it wont
 """
-
-
 def pt1():
 	size = int(os.get_terminal_size().columns)
 	if size <= 150:
@@ -43,18 +42,13 @@ def pt1():
 		tprint(t1, font="slant")
 
 # this display error pretty begging
-
-
 def dis_error():
 	print(Fore.RED + "=====ERROR=====".center(os.get_terminal_size().columns))
-
 
 def dis_error_end():
 	print(Fore.RED + '==============='.center(os.get_terminal_size().columns))
 
 # change the images color
-
-
 def change_color(img):
 	black = (0, 0, 0)
 	white = (255, 255, 255)
@@ -76,15 +70,11 @@ def change_color(img):
 	return img
 
 # make image 600x600
-
-
 def make_bigger(img):
 	im2 = img.resize((600, 600))
 	return im2
 
 # crop image
-
-
 def crop_image(img):
 	tup1 = (0, 15, 400, 80)  # new demensions
 	cropped = img.crop(tup1)  # crop for title
@@ -95,8 +85,6 @@ def crop_image(img):
 text splitlines text
 splits the text and returns the list of options
 """
-
-
 def split_text(text, p1):
 	CN = get_all_cards()  # card names
 	lines1 = text.splitlines()
@@ -110,8 +98,6 @@ def split_text(text, p1):
 	return options
 
 #compare the output of the AI and the actual names of the car if the ratio is above 0.9 as if its their card
-
-
 def compare1(img, p1, og_image):
 	# these chars can be stripped for better comparison
 	stripable = ['=', '!', '?', '-', "'", '.']
@@ -131,21 +117,15 @@ def compare1(img, p1, og_image):
 	for o in options:
 		print(Fore.GREEN + "Text detected:", Fore.YELLOW + "{}".format(o[0]))
 		print(Fore.GREEN + "Card name closest: ", Fore.YELLOW + "{}".format(o[1]))
-		print(Fore.GREEN + "Percent Match: ",
-		      Fore.MAGENTA + "{}%".format(float(o[2]*100)))
-		print(Fore.GREEN + "From Set: ", Fore.YELLOW +
-		      "{}.".format(get_set_by_card_name1(str(o[1].replace(".jpg", "")))))
+		print(Fore.GREEN + "Percent Match: ",Fore.MAGENTA + "{}%".format(float(o[2]*100)))
+		print(Fore.GREEN + "From Set: ", Fore.YELLOW +"{}.".format(get_set_by_card_name1(str(o[1].replace(".jpg", "")))))
 		hash1, hash2 = image_comapre_hash(o[1], og_image)
 		comb = hash1 - hash2
-		print(Fore.GREEN + "Hash from guessed Name: ",
-		      Fore.YELLOW + "{}".format(hash1))
-		print(Fore.GREEN + "Hash from uploaded Image: ",
-		      Fore.YELLOW + "{}".format(hash2))
-		print(Fore.GREEN + "Hash difference: ",
-		      Fore.YELLOW + "{}".format(hash1 - hash2))
+		print(Fore.GREEN + "Hash from guessed Name: ",Fore.YELLOW + "{}".format(hash1))
+		print(Fore.GREEN + "Hash from uploaded Image: ",Fore.YELLOW + "{}".format(hash2))
+		print(Fore.GREEN + "Hash difference: ",Fore.YELLOW + "{}".format(hash1 - hash2))
 		if comb == 0:
-			print(Fore.GREEN + "The file you uploaded is",
-			      Fore.RED + " {}".format(o[1].replace(".jpg", "")))
+			print(Fore.GREEN + "The file you uploaded is",Fore.RED + " {}".format(o[1].replace(".jpg", "")))
 
 	if len(options) < 1:
 		print("File was less the a {}% match".format(p1*100))
@@ -156,14 +136,10 @@ def compare1(img, p1, og_image):
 
 # check the simularity between two strings
 # credit: https://stackoverflow.com/questions/17388213/find-the-similarity-metric-between-two-strings
-
-
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 # get all images
-
-
 def all_img():
 	data = pd.read_csv(config.master_cards, index_col=False)
 	card_names = list(data['images'])
@@ -171,15 +147,11 @@ def all_img():
 	return card_names
 
 # remote card testing with requests
-
-
 def get_remote_card(url):
 	im = Image.open(requests.get(url, stream=True).raw)
 	return im
 
 # check if the url is good
-
-
 def check_url(url):
 	stat_code = requests.get(url)
 	return stat_code.status_code
@@ -191,8 +163,6 @@ check if percent entered is:
 	-+ over 0.001
 	-+ not a string
 """
-
-
 def check_percent(per):
 	try:
 		per = float(per)
@@ -207,8 +177,6 @@ def check_percent(per):
 		return "The percent can't be a string, Exiting."
 
 # make sure the file type is acceptable
-
-
 def check_file_type(f1):
 	# good file types for imgs
 	good_file_types = [
