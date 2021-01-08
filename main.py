@@ -10,13 +10,15 @@ import requests
 from art import *
 import pandas as pd
 from PIL import Image
-from progress.bar import Bar
+from tabulate import tabulate
 from difflib import SequenceMatcher
 from colorama import init, Fore, Back, Style
 
 # my functions 
 from functions import get_all_cards, image_compare_hash, get_set_by_card_name
 from functions import get_json_by_set, get_set_by_card2, get_multiverse_id_card, get_card_info
+from color_functions import add_green, add_yellow, add_magenta, add_green_dim, add_red, color_heading
+
 
 # import pytesseract for windows or linux
 if sys.platform == "win32":
@@ -127,14 +129,30 @@ def compare(img, p1, og_image, get_ci_arg):
 		comb = hash1 - hash2
 		#if float(o[2]*100) == 100:
 		print(Fore.RED + "Card option {}".format(card).center(os.get_terminal_size().columns, '='))
-		print(Fore.GREEN + "Text detected:", Fore.YELLOW + "{}".format(o[0]))
-		print(Fore.GREEN + "Card name closest: ", Fore.YELLOW + "{}".format(o[1]))
-		print(Fore.GREEN + "Percent Match: ",Fore.MAGENTA + "{}%".format(float(o[2]*100)))
-		print(Fore.GREEN + "From Set: ", Fore.YELLOW +"{}".format(get_set_by_card_name(str(o[1].replace(".jpg", "")))))
-		
-		print(Fore.GREEN + "Hash from guessed Name: ",Fore.YELLOW + "{}".format(hash1))
-		print(Fore.GREEN + "Hash from uploaded Image: ",Fore.YELLOW + "{}".format(hash2))
-		print(Fore.GREEN + "Hash difference: ",Fore.YELLOW + "{}\n".format(hash1 - hash2))
+
+		#print(Fore.GREEN + "Text detected:", Fore.YELLOW + "{}".format(o[0]))
+		#print(Fore.GREEN + "Card name closest: ", Fore.YELLOW + "{}".format(o[1]))
+		#print(Fore.GREEN + "Percent Match: ",Fore.MAGENTA + "{}%".format(float(o[2]*100)))
+		#print(Fore.GREEN + "From Set: ", Fore.YELLOW +"{}".format(get_set_by_card_name(str(o[1].replace(".jpg", "")))))
+		#print(Fore.GREEN + "Hash from guessed Name: ",Fore.YELLOW + "{}".format(hash1))
+		#print(Fore.GREEN + "Hash from guessed Name: ",Fore.YELLOW + "{}".format(hash1))
+		#print(Fore.GREEN + "Hash difference: ",Fore.YELLOW + "{}\n".format(hash1 - hash2))
+		#print(Fore.GREEN + "Hash from uploaded Image: ",Fore.YELLOW + "{}".format(hash2))
+
+
+		table = []
+		# table test 1
+		table.append([add_green("Text detected:"), add_yellow("{}".format(o[0]))])
+		table.append([add_green("Text detected:"), add_yellow("{}".format(o[0]))])
+		table.append([add_green("Card name closest: "), add_yellow("{}".format(o[1]))])
+		table.append([add_green("Percent Match: "),  add_magenta("{}%".format(float(o[2]*100)))])
+		table.append([add_green("From Set: "), add_yellow("{}".format(get_set_by_card_name(str(o[1].replace(".jpg", "")))))])
+		table.append([add_green("Hash from guessed Name: "), add_yellow("{}".format(hash1))])
+		table.append([add_green("Hash from uploaded Name: "), add_yellow("{}".format(hash2))])
+		table.append([add_green("Hash difference: "), add_yellow("{}".format(hash1-hash2))])
+
+		header = [color_heading('Info'), color_heading('Value')]
+		print(tabulate(table, header, tablefmt='grid'))
 
 		if comb == 0:
 			print(Fore.GREEN + "The file you uploaded is",Fore.RED + " {}\n".format(o[1].replace(".jpg", "")))
@@ -296,5 +314,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
-
