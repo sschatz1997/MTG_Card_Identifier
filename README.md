@@ -22,7 +22,7 @@
 
   ## Usage 
   ```
-  $ python3 -img IMAGE [-p PERCENT] [-url URL]
+  $ python3 -img IMAGE [-p PERCENT] [-url URL] [-ci CI]
 
   MTG_Card_Identifier: Find magic cards based on the Name on the card.
   
@@ -31,14 +31,15 @@
     -p PERCENT, --Percent PERCENT
                           Enter the percent you want the comparison to be [whole numbers].
     -url URL, --URL URL   Tell the script that the -img is a url. Usage [ -url y ]
-    
+    -ci CI, --CI CI       Print out more information about a card if the script is 100 percent a match. 
+                          [y or n]
   required named arguments:
     -img IMAGE, --Image IMAGE
                           Insert path local or remote.
   ```
 
   ## Requirements
-  ### Python:
+  ### Python PIP Packages:
   - [Art](https://pypi.org/project/Art/)
   - [Colorama](https://pypi.org/project/colorama/)
   - [Imagehash](https://pypi.org/project/ImageHash/)
@@ -48,6 +49,7 @@
   - [Pytesseract](https://pypi.org/project/pytesseract/)
   - [Pillow](https://pypi.org/project/Pillow/)
   - [Pequests](https://pypi.org/project/requests/)
+  - [tabulate](https://pypi.org/project/tabulate/)
 
 
   ## Sets included:

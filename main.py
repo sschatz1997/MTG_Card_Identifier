@@ -16,6 +16,7 @@ from colorama import init, Fore, Back, Style
 
 # my functions 
 from functions import get_all_cards, image_compare_hash, get_set_by_card_name
+from functions import get_json_by_set, get_set_by_card2, get_multiverse_id_card, get_card_info
 
 # import pytesseract for windows or linux
 if sys.platform == "win32":
@@ -97,7 +98,7 @@ def split_text(text, p1):
 	return options
 
 # compare just 1
-def compare(img, p1, og_image):
+def compare(img, p1, og_image, get_ci_arg):
 	# these chars can be stripped for better comparison
 	stripable = ['=', '!', '?', '-', "'", '.']
 
@@ -125,7 +126,7 @@ def compare(img, p1, og_image):
 		hash1, hash2 = image_compare_hash(o[1], og_image)
 		comb = hash1 - hash2
 		#if float(o[2]*100) == 100:
-		print(Fore.RED + "Card option {}".format(card).center(os.get_terminal_size().columns))
+		print(Fore.RED + "Card option {}".format(card).center(os.get_terminal_size().columns, '='))
 		print(Fore.GREEN + "Text detected:", Fore.YELLOW + "{}".format(o[0]))
 		print(Fore.GREEN + "Card name closest: ", Fore.YELLOW + "{}".format(o[1]))
 		print(Fore.GREEN + "Percent Match: ",Fore.MAGENTA + "{}%".format(float(o[2]*100)))
@@ -137,7 +138,9 @@ def compare(img, p1, og_image):
 
 		if comb == 0:
 			print(Fore.GREEN + "The file you uploaded is",Fore.RED + " {}\n".format(o[1].replace(".jpg", "")))
-
+			# print info if yes
+			if get_ci_arg == 'yes':
+				get_card_info(o[1])
 		card += 1
 
 
@@ -206,13 +209,14 @@ def main():
 	# display the ascii title
 	pt1()
 
-	print(Fore.GREEN + "Starting the search")
+	print(Fore.CYAN + "Starting the search".center(os.get_terminal_size().columns, '='))
 
 	parser = argparse.ArgumentParser('python3', description=description)
 	requiredArgs = parser.add_argument_group('required named arguments')
 	requiredArgs.add_argument('-img', '--Image', help='Insert path to the Image here.', required=True)
 	parser.add_argument('-p', '--Percent', help='Enter the percent you want the comparison to be [whole numbers].', required=False, default=72)
 	parser.add_argument('-url', '--URL', help='Tell the script that the -img is a url. Usage [ -url y ]', required=False, default='n')
+	parser.add_argument('-ci', '--CI', help='Print out more information about a card if the script is 100 percent a match. [y or n]', required=False, default='no')
 	argument = parser.parse_args()
 
 	# check if an image is an link or a path
@@ -231,7 +235,13 @@ def main():
 				percent = float(float(argument.Percent)/float(100))
 				img = change_color(img)
 				img = crop_image(img)
-				compare(img, percent, og_image)
+
+				# check get_ci_arg \ card info
+				if argument.CI.lower() == 'y' or argument.CI.lower() == 'yes':
+					compare(img, percent, og_image, 'yes')
+				elif argument.CI.lower() == 'n' or argument.CI.lower() == 'no':
+					compare(img, percent, og_image, 'no')
+
 			else:
 				print("\n\n")
 				dis_error()
@@ -255,7 +265,13 @@ def main():
 					percent = float(float(argument.Percent)/float(100))
 					img = change_color(img)
 					img = crop_image(img)
-					compare(img, percent, og_image)
+
+					# check get_ci_arg \ card info
+					if argument.CI.lower() == 'y' or argument.CI.lower() == 'yes':
+						compare(img, percent, og_image, 'yes')
+					elif argument.CI.lower() == 'n' or argument.CI.lower() == 'no':
+						compare(img, percent, og_image, 'no')
+
 				else:
 					dis_error()
 					print(Fore.RED + check_percent(argument.Percent).center(os.get_terminal_size().columns))
@@ -274,7 +290,7 @@ def main():
 			print('Bad URL returned a {} code. Exiting.'.format(check_url(argument.Image)))
 			dis_error_end()
 
-	print(Fore.GREEN + "Ending the search\n")
+	print(Fore.CYAN + "Ending the search".center(os.get_terminal_size().columns, '='))
 	
 
 

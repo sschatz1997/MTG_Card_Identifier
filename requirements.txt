@@ -8,3 +8,4 @@ imagehash==4.2.0
 art==5.1
 colorama==0.4.4
 requests==2.24.0
+tabulate==0.8.7

@@ -18,6 +18,7 @@ elif sys.platform == "linux":
 # all aval image urls
 all_good = data + "all.csv"
 all_bad = data + "no_url.csv"
+set_info = data + "set_info.csv"
 
 # set lists
 active_sets = [
@@ -151,3 +152,79 @@ expansion_set_header = [
 	're stat code',
 	'api url'
 ]
+
+card_info_api_keys = [
+	'name',
+	'colorIdentity',
+	'convertedManaCost',
+	'manaCost',
+	'type',
+	'types',
+	'supertypes',
+	#'originalText',
+	#'colors',
+	#'number',
+	'rarity',
+	'power',
+	'toughness',
+	'availability',
+	'printings',
+	'text'
+]
+
+# for table
+card_info_api_keys_ftable = [
+	'Name',
+	'Color Identity',
+	'Converted Mana Cost',
+	'Mana Cost',
+	'Type',
+	'Other Types',
+	'Super Types',
+	'Rarity',
+	'Power',
+	'Toughness',
+	'Formats Allowed',
+	'Set Printings',
+	'Text'
+]
+
+"""
+original
+card_info_api_keys = [
+	'artist',
+	'asciiName',
+	'availability',
+	'borderColor',
+	'colorIdentity',
+	'colors',
+	'convertedManaCost',
+	'edhrecRank',
+	'foreignData',
+	'frameVersion',
+	'hasFoil',
+	'hasNonFoil',
+	'identifiers',
+	'isReserved',
+	'layout',
+	'legalities',
+	'manaCost',
+	'name',
+	'number',
+	'originalText',
+	'originalType',
+	'power',
+	'printings',
+	'purchaseUrls',
+	'rarity',
+	'rulings',
+	'setCode',
+	'subtypes',
+	'supertypes',
+	'text',
+	'toughness',
+	'type',
+	'types',
+	'uuid'
+]
+"""

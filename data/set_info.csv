@@ -1,0 +1,86 @@
+set,abrivation,api_url
+Arabian Nights,ARN,https://mtgjson.com/api/v5/ARN.json
+Antiquities,ATQ,https://mtgjson.com/api/v5/ATQ.json
+Legends,LEG,https://mtgjson.com/api/v5/LEG.json
+The Dark,DRK,https://mtgjson.com/api/v5/DRK.json
+Fallen Empires,FEM,https://mtgjson.com/api/v5/FEM.json
+Ice Age,ICE,https://mtgjson.com/api/v5/ICE.json
+Homelands,HML,https://mtgjson.com/api/v5/HML.json
+Alliances,ALL,https://mtgjson.com/api/v5/ALL.json
+Mirage,MIR,https://mtgjson.com/api/v5/MIR.json
+Visions,VIS,https://mtgjson.com/api/v5/VIS.json
+Weatherlight,WTH,https://mtgjson.com/api/v5/WTH.json
+Tempest,TMP,https://mtgjson.com/api/v5/TMP.json
+Stronghold,STH,https://mtgjson.com/api/v5/STH.json
+Exodus,EXO,https://mtgjson.com/api/v5/EXO.json
+Urza's Saga,USG,https://mtgjson.com/api/v5/USG.json
+Urza's Legacy,ULG,https://mtgjson.com/api/v5/ULG.json
+Urza's Destiny,UDS,https://mtgjson.com/api/v5/UDS.json
+Mercadian Masques,MMQ,https://mtgjson.com/api/v5/MMQ.json
+Nemesis,NEM,https://mtgjson.com/api/v5/NEM.json
+Prophecy,PCY,https://mtgjson.com/api/v5/PCY.json
+Invasion,INV,https://mtgjson.com/api/v5/INV.json
+Planeshift,PLS,https://mtgjson.com/api/v5/PLS.json
+Apocalypse,APC,https://mtgjson.com/api/v5/APC.json
+Odyssey,ODY,https://mtgjson.com/api/v5/ODY.json
+Torment,TOR,https://mtgjson.com/api/v5/TOR.json
+Judgment,JUD,https://mtgjson.com/api/v5/JUD.json
+Onslaught,ONS,https://mtgjson.com/api/v5/ONS.json
+Legions,LGN,https://mtgjson.com/api/v5/LGN.json
+Scourge,SCG,https://mtgjson.com/api/v5/SCG.json
+Mirrodin,MRD,https://mtgjson.com/api/v5/MRD.json
+Darksteel,DST,https://mtgjson.com/api/v5/DST.json
+Fifth Dawn,5DN,https://mtgjson.com/api/v5/5DN.json
+Champions of Kamigawa,CHK,https://mtgjson.com/api/v5/CHK.json
+Betrayers of Kamigawa,BOK,https://mtgjson.com/api/v5/BOK.json
+Saviors of Kamigawa,SOK,https://mtgjson.com/api/v5/SOK.json
+Ravnica City of Guilds,RAV,https://mtgjson.com/api/v5/RAV.json
+Guildpact,GPT,https://mtgjson.com/api/v5/GPT.json
+Dissension,DIS,https://mtgjson.com/api/v5/DIS.json
+Coldsnap,CSP,https://mtgjson.com/api/v5/CSP.json
+Time Spiral,TSP/TSB,https://mtgjson.com/api/v5/TSP.json
+Planar Chaos,PLC,https://mtgjson.com/api/v5/PLC.json
+Future Sight,FUT,https://mtgjson.com/api/v5/FUT.json
+Lorwyn,LRW,https://mtgjson.com/api/v5/LRW.json
+Morningtide,MOR,https://mtgjson.com/api/v5/MOR.json
+Shadowmoor,SHM,https://mtgjson.com/api/v5/SHM.json
+Eventide,EVE,https://mtgjson.com/api/v5/EVE.json
+Shards of Alara,ALA,https://mtgjson.com/api/v5/ALA.json
+Conflux,CON,https://mtgjson.com/api/v5/CON.json
+Alara Reborn,ARB,https://mtgjson.com/api/v5/ARB.json
+Worldwake,WWK,https://mtgjson.com/api/v5/WWK.json
+Rise of the Eldrazi,ROE,https://mtgjson.com/api/v5/ROE.json
+Scars of Mirrodin,SOM,https://mtgjson.com/api/v5/SOM.json
+Mirrodin Besieged,MBS,https://mtgjson.com/api/v5/MBS.json
+New Phyrexia,NPH,https://mtgjson.com/api/v5/NPH.json
+Innistrad,ISD,https://mtgjson.com/api/v5/ISD.json
+Dark Ascension,DKA,https://mtgjson.com/api/v5/DKA.json
+Avacyn Restored,AVR,https://mtgjson.com/api/v5/AVR.json
+Return to Ravnica,RTR,https://mtgjson.com/api/v5/RTR.json
+Gatecrash,GTC,https://mtgjson.com/api/v5/GTC.json
+Dragon's Maze,DGM,https://mtgjson.com/api/v5/DGM.json
+Theros,THS,https://mtgjson.com/api/v5/THS.json
+Born of the Gods,BNG,https://mtgjson.com/api/v5/BNG.json
+Journey into Nyx,JOU,https://mtgjson.com/api/v5/JOU.json
+Khans of Tarkir,KTK,https://mtgjson.com/api/v5/KTK.json
+Fate Reforged,FRF,https://mtgjson.com/api/v5/FRF.json
+Dragons of Tarkir,DTK,https://mtgjson.com/api/v5/DTK.json
+Oath of the Gatewatch,OGW,https://mtgjson.com/api/v5/OGW.json
+Shadows over Innistrad,SOI,https://mtgjson.com/api/v5/SOI.json
+Eldritch Moon,EMN,https://mtgjson.com/api/v5/EMN.json
+Kaladesh,KLD,https://mtgjson.com/api/v5/KLD.json
+Aether Revolt,AER,https://mtgjson.com/api/v5/AER.json
+Amonkhet,AKH,https://mtgjson.com/api/v5/AKH.json
+Hour of Devastation,HOU,https://mtgjson.com/api/v5/HOU.json
+Ixalan,XLN,https://mtgjson.com/api/v5/XLN.json
+Rivals of Ixalan,RIX,https://mtgjson.com/api/v5/RIX.json
+Dominaria,DOM,https://mtgjson.com/api/v5/DOM.json
+War of the Spark,WAR,https://mtgjson.com/api/v5/WAR.json
+Theros Beyond Death,THB,https://mtgjson.com/api/v5/THB.json
+Zendikar Rising,ZNR,https://mtgjson.com/api/v5/ZNR.json
+Zendikar,ZEN,https://mtgjson.com/api/v5/ZEN.json
+Ikoria Lair of Behemoths,IKO,https://mtgjson.com/api/v5/IKO.json
+Battle for Zendikar,BFZ,https://mtgjson.com/api/v5/BFZ.json
+Guilds of Ravnica,GRN,https://mtgjson.com/api/v5/GRN.json
+Ravnica Allegiance,RNA,https://mtgjson.com/api/v5/RNA.json
+Ixalan,XLN,https://mtgjson.com/api/v5/XLN.json
