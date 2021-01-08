@@ -31,8 +31,6 @@ Optional arguments:
   -p PERCENT, --Percent PERCENT
                         Enter the percent you want the comparison to be [whole numbers].
   -url URL, --URL URL   Tell the script that the -img is a url. Usage [ -url y ]
-  -num NUM, --Num NUM   Just one of the possible cards or all of the cards within the percentage match. [ one or
-                        all ]
   
 required named arguments:
   -img IMAGE, --Image IMAGE
