@@ -22,7 +22,7 @@ $ sudo sh install.sh
 
 ## Usage 
 ```
-$ python3 -img IMAGE [-p PERCENT] [-url URL] [-num NUM]
+$ python3 -img IMAGE [-p PERCENT] [-url URL]
 
 MTG_Card_Identifier: Find magic cards based on the Name on the card.
  
