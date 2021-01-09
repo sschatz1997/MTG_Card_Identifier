@@ -13,7 +13,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/sschatz1997/MTG_Card_Identifier",
-    #packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(),
+    """
     packages=[
 		'opencv_python',
 		'pandas',
@@ -27,6 +28,7 @@ setuptools.setup(
 		'requests',
 		'tabulate'
 	],
+    """
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
