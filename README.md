@@ -42,6 +42,8 @@
 
   ## Usage 
   ```
+  # change into the script directory 
+  cd MTG_Card_Identifier
   $ python3 -img IMAGE [-p PERCENT] [-url URL] [-ci CI] [-show SHOW]
 
 MTG_Card_Identifier: Find magic cards based on the Name on the card.
