@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="MTG_Card_Identifier-sschatz1997",  # Replace with your own username
+    name="MTG_Card_Identifier",  # Replace with your own username
     version="0.0.1",
     author="Sam Schatz",
     author_email="samsch1997@gmail.com",
