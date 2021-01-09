@@ -1,6 +1,7 @@
   ![Generic badge](https://img.shields.io/badge/Python-3.7.3-informal.svg)
   [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
   [![Build Status](https://www.travis-ci.com/sschatz1997/MTG_Card_Identifier.svg?branch=main)](https://www.travis-ci.com/sschatz1997/MTG_Card_Identifier)
+  [![PyPi Version](https://img.shields.io/pypi/v/MTG_Card_Identifier.svg)](https://pypi.python.org/pypi/MTG_Card_Identifier/)
   # MTG_Card_Identifier
 
   MTG_Card_Identifier is a python based program to identify Magic: The Gathering cards based on the Card name in the image that the user uploads.
