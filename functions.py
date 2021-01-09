@@ -192,3 +192,14 @@ def color_change(color_list):
 		elif color_string == 'W':
 			newL.append('White')
 	return newL
+
+
+# return image type to display
+def return_img_display(name):
+	df1 = pd.read_csv(config.all_good, index_col=False)
+	try:
+		url = list(df1.loc[df1['card_name'] == str(name)]['image_url'])[-1]
+		img = Image.open(requests.get(url, stream=True).raw)
+		return 'ok', img
+	except:
+		return 'no file found', 0

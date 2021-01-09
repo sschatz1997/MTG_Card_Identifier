@@ -15,6 +15,7 @@ from difflib import SequenceMatcher
 from colorama import init, Fore, Back, Style
 
 # my functions 
+from functions import return_img_display
 from functions import get_all_cards, image_compare_hash, get_set_by_card_name
 from functions import get_json_by_set, get_set_by_card2, get_multiverse_id_card, get_card_info
 from color_functions import add_green, add_yellow, add_magenta, add_green_dim, add_red, color_heading
@@ -39,9 +40,9 @@ def pt1():
 	if size <= 150:
 		tprint('''MTG Card 
 		Identifier 
-		Script''', font="slant")
+		Script!''', font="slant")
 	else:
-		t1 = '''MTG Card Identifier Script'''
+		t1 = '''MTG Card Identifier Script!'''
 		tprint(t1, font="slant")
 
 # this display error pretty begging
@@ -100,7 +101,7 @@ def split_text(text, p1):
 	return options
 
 # compare just 1
-def compare(img, p1, og_image, get_ci_arg):
+def compare(img, p1, og_image, get_ci_arg, showQ):
 	# these chars can be stripped for better comparison
 	stripable = ['=', '!', '?', '-', "'", '.']
 
@@ -145,7 +146,8 @@ def compare(img, p1, og_image, get_ci_arg):
 		table.append([add_green("Text detected:"), add_yellow("{}".format(o[0]))])
 		table.append([add_green("Text detected:"), add_yellow("{}".format(o[0]))])
 		table.append([add_green("Card name closest: "), add_yellow("{}".format(o[1]))])
-		table.append([add_green("Percent Match: "),  add_magenta("{}%".format(float(o[2]*100)))])
+		out_percent = round(float(o[2]*100), 2)
+		table.append([add_green("Percent Match: "),  add_magenta("{}%".format(out_percent))])
 		table.append([add_green("From Set: "), add_yellow("{}".format(get_set_by_card_name(str(o[1].replace(".jpg", "")))))])
 		table.append([add_green("Hash from guessed Name: "), add_yellow("{}".format(hash1))])
 		table.append([add_green("Hash from uploaded Name: "), add_yellow("{}".format(hash2))])
@@ -158,7 +160,17 @@ def compare(img, p1, og_image, get_ci_arg):
 			print(Fore.GREEN + "The file you uploaded is",Fore.RED + " {}\n".format(o[1].replace(".jpg", "")))
 			# print info if yes
 			if get_ci_arg == 'yes':
+				print("\n\n")
+				print(Fore.CYAN + "Displaying Card Info".center(os.get_terminal_size().columns, '-'))
 				get_card_info(o[1])
+
+			if showQ == 'yes':
+				#print(o[1])
+				status, img_import = return_img_display(o[1])
+				if status == 'ok':
+					img_import.show()
+				else:
+					print('Image not found')
 		card += 1
 
 
@@ -235,6 +247,7 @@ def main():
 	parser.add_argument('-p', '--Percent', help='Enter the percent you want the comparison to be [whole numbers].', required=False, default=72)
 	parser.add_argument('-url', '--URL', help='Tell the script that the -img is a url. Usage [ -url y ]', required=False, default='n')
 	parser.add_argument('-ci', '--CI', help='Print out more information about a card if the script is 100 percent a match. [y or n]', required=False, default='no')
+	parser.add_argument('-show','--Show', help='Show guessed image. [y or n]', required=False, default='no')
 	argument = parser.parse_args()
 
 	# check if an image is an link or a path
@@ -256,15 +269,28 @@ def main():
 
 				# check get_ci_arg \ card info
 				if argument.CI.lower() == 'y' or argument.CI.lower() == 'yes':
-					compare(img, percent, og_image, 'yes')
+					# check image show
+					if argument.Show.lower() == 'y' or argument.Show.lower() == 'yes':
+						compare(img, percent, og_image, 'yes', 'yes')
+					elif argument.Show.lower() == 'n' or argument.Show.lower() == 'no':
+						compare(img, percent, og_image, 'yes', 'no')
 				elif argument.CI.lower() == 'n' or argument.CI.lower() == 'no':
-					compare(img, percent, og_image, 'no')
-
+					# check image show
+					if argument.Show.lower() == 'y' or argument.Show.lower() == 'yes':
+						compare(img, percent, og_image, 'no', 'yes')
+					elif argument.Show.lower() == 'n' or argument.Show.lower() == 'no':
+						compare(img, percent, og_image, 'no', 'no')
+				else:
+					print("\n\n")
+					dis_error()
+					print(Fore.RED + "{} is not a valid arguement!".format(argument.CI).center(os.get_terminal_size().columns))
+					dis_error_end()
 			else:
 				print("\n\n")
 				dis_error()
 				print(Fore.RED + check_percent(argument.Percent).center(os.get_terminal_size().columns))
 				dis_error_end()
+
 		else:
 			dis_error()
 			print(Fore.RED + check_file_type(argument.Image).center(os.get_terminal_size().columns))
@@ -286,9 +312,24 @@ def main():
 
 					# check get_ci_arg \ card info
 					if argument.CI.lower() == 'y' or argument.CI.lower() == 'yes':
-						compare(img, percent, og_image, 'yes')
+						# check image show
+						if argument.Show.lower() == 'y' or argument.Show.lower() == 'yes':
+							compare(img, percent, og_image, 'yes', 'yes')
+						elif argument.Show.lower() == 'n' or argument.Show.lower() == 'no':
+							compare(img, percent, og_image, 'yes', 'no')
 					elif argument.CI.lower() == 'n' or argument.CI.lower() == 'no':
-						compare(img, percent, og_image, 'no')
+						# check image show
+						if argument.Show.lower() == 'y' or argument.Show.lower() == 'yes':
+							compare(img, percent, og_image, 'no', 'yes')
+						elif argument.Show.lower() == 'n' or argument.Show.lower() == 'no':
+							compare(img, percent, og_image, 'no', 'no')
+
+						#compare(img, percent, og_image, 'no')
+					else:
+						print("\n\n")
+						dis_error()
+						print(Fore.RED + "{} is not a valid arguement!".format(argument.CI).center(os.get_terminal_size().columns))
+						dis_error_end()
 
 				else:
 					dis_error()
@@ -309,8 +350,12 @@ def main():
 			dis_error_end()
 
 	print(Fore.CYAN + "Ending the search".center(os.get_terminal_size().columns, '='))
+
+	
 	
 
 
 if __name__ == "__main__":
 	main()
+
+

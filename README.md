@@ -22,20 +22,23 @@
 
   ## Usage 
   ```
-  $ python3 -img IMAGE [-p PERCENT] [-url URL] [-ci CI]
+  $ python3 -img IMAGE [-p PERCENT] [-url URL] [-ci CI] [-show SHOW]
 
-  MTG_Card_Identifier: Find magic cards based on the Name on the card.
-  
-  Optional arguments:
-    -h, --help            show this help message and exit
-    -p PERCENT, --Percent PERCENT
-                          Enter the percent you want the comparison to be [whole numbers].
-    -url URL, --URL URL   Tell the script that the -img is a url. Usage [ -url y ]
-    -ci CI, --CI CI       Print out more information about a card if the script is 100 percent a match. 
-                          [y or n]
-  required named arguments:
-    -img IMAGE, --Image IMAGE
-                          Insert path local or remote.
+MTG_Card_Identifier: Find magic cards based on the Name on the card.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PERCENT, --Percent PERCENT
+                        Enter the percent you want the comparison to be [whole numbers].
+  -url URL, --URL URL   Tell the script that the -img is a url. Usage [ -url y ]
+  -ci CI, --CI CI       Print out more information about a card if the script is 100 percent a match. 
+                        [y or n]
+  -show SHOW, --Show SHOW
+                        Show guessed image. [y or n]
+
+required named arguments:
+  -img IMAGE, --Image IMAGE
+                        Insert path to the Image here.
   ```
 
   ## Requirements
