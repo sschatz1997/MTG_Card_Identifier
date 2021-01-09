@@ -25,7 +25,7 @@ setuptools.setup(
 		'art',
 		'colorama',
 		'requests',
-		'tabulate''
+		'tabulate'
 	],
     classifiers=[
         "Programming Language :: Python :: 3",
