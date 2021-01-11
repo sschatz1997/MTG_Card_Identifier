@@ -40,20 +40,27 @@
   > pip3 install -r requirements.txt
   ```
   - May have to install Tesseract from [here](https://github.com/UB-Mannheim/tesseract/wiki)
+### PIP
+```
+pip install MTG-Card-Identifier
+```
 
-  ## Usage 
-  ```
-  # change into the script directory 
-  cd MTG_Card_Identifier
-  $ python3 main.py -img IMAGE [-p PERCENT] [-url URL] [-ci CI] [-show SHOW]
+## Usage 
+```
+# change into the script directory 
+cd MTG_Card_Identifier
+$ python3 main.py -img IMAGE [-url URL] [-dir DIR] [-batchFile BATCHFILE] [-p PERCENT] [-ci CI] [-show SHOW]
 
 MTG_Card_Identifier: Find magic cards based on the Name on the card.
 
 optional arguments:
   -h, --help            show this help message and exit
+  -url URL, --URL URL   Tell the script that the -img is a url. Usage [ -url y ]
+  -dir DIR, --DIR DIR   Batch directory check the script that the -dir is a directory. Usage [-dir y]
+  -batchFile BATCHFILE, --BatchFile BATCHFILE
+                        Batch File will process the contents. The args tell us if its local or remote.
   -p PERCENT, --Percent PERCENT
                         Enter the percent you want the comparison to be [whole numbers].
-  -url URL, --URL URL   Tell the script that the -img is a url. Usage [ -url y ]
   -ci CI, --CI CI       Print out more information about a card if the script is 100 percent a match. 
                         [y or n]
   -show SHOW, --Show SHOW
@@ -62,21 +69,7 @@ optional arguments:
 required named arguments:
   -img IMAGE, --Image IMAGE
                         Insert path to the Image here.
-  ```
-
-  ## Requirements
-  ### Python PIP Packages:
-  - [Art](https://pypi.org/project/Art/)
-  - [Colorama](https://pypi.org/project/colorama/)
-  - [Imagehash](https://pypi.org/project/ImageHash/)
-  - [Opencv_python](https://pypi.org/project/opencv-python/)
-  - [Pandas](https://pypi.org/project/pandas/)
-  - [Progress](https://pypi.org/project/progress/)
-  - [Pytesseract](https://pypi.org/project/pytesseract/)
-  - [Pillow](https://pypi.org/project/Pillow/)
-  - [Pequests](https://pypi.org/project/requests/)
-  - [tabulate](https://pypi.org/project/tabulate/)
-
+```
 
   ## Sets included:
 | Set Name | Cards Available | Total Cards in Set | Set Name | Cards Available | Total Cards in Set |
