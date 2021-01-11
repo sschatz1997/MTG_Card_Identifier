@@ -27,3 +27,6 @@ def add_red(val):
 
 def color_heading(val):
 	return Style.BRIGHT + Fore.CYAN + val + Style.RESET_ALL
+
+def add_blue(val):
+	return Fore.BLUE + val + Style.RESET_ALL

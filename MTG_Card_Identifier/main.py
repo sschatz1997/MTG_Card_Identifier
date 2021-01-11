@@ -7,7 +7,7 @@ import config
 import os.path
 import argparse
 import requests
-from art import *
+from art import tprint
 import pandas as pd
 from PIL import Image
 from tabulate import tabulate
@@ -15,10 +15,14 @@ from difflib import SequenceMatcher
 from colorama import init, Fore, Back, Style
 
 # my functions 
-from functions import return_img_display
+from functions import return_img_display, print_passed_vars, check_url
 from functions import get_all_cards, image_compare_hash, get_set_by_card_name
 from functions import get_json_by_set, get_set_by_card2, get_multiverse_id_card, get_card_info
 from color_functions import add_green, add_yellow, add_magenta, add_green_dim, add_red, color_heading
+
+# dir functions
+from dir_functions import dir_checker, read_batch_txt_path, read_batch_txt_url
+from dir_functions import read_batch_csv_path, read_batch_csv_url
 
 
 # import pytesseract for windows or linux
@@ -128,17 +132,7 @@ def compare(img, p1, og_image, get_ci_arg, showQ):
 	for o in options:
 		hash1, hash2 = image_compare_hash(o[1], og_image)
 		comb = hash1 - hash2
-		#if float(o[2]*100) == 100:
 		print(Fore.RED + "Card option {}".format(card).center(os.get_terminal_size().columns, '='))
-
-		#print(Fore.GREEN + "Text detected:", Fore.YELLOW + "{}".format(o[0]))
-		#print(Fore.GREEN + "Card name closest: ", Fore.YELLOW + "{}".format(o[1]))
-		#print(Fore.GREEN + "Percent Match: ",Fore.MAGENTA + "{}%".format(float(o[2]*100)))
-		#print(Fore.GREEN + "From Set: ", Fore.YELLOW +"{}".format(get_set_by_card_name(str(o[1].replace(".jpg", "")))))
-		#print(Fore.GREEN + "Hash from guessed Name: ",Fore.YELLOW + "{}".format(hash1))
-		#print(Fore.GREEN + "Hash from guessed Name: ",Fore.YELLOW + "{}".format(hash1))
-		#print(Fore.GREEN + "Hash difference: ",Fore.YELLOW + "{}\n".format(hash1 - hash2))
-		#print(Fore.GREEN + "Hash from uploaded Image: ",Fore.YELLOW + "{}".format(hash2))
 
 
 		table = []
@@ -158,14 +152,13 @@ def compare(img, p1, og_image, get_ci_arg, showQ):
 
 		if comb == 0:
 			print(Fore.GREEN + "The file you uploaded is",Fore.RED + " {}\n".format(o[1].replace(".jpg", "")))
-			# print info if yes
+			# print info if y
 			if get_ci_arg == 'yes':
 				print("\n\n")
 				print(Fore.CYAN + "Displaying Card Info".center(os.get_terminal_size().columns, '-'))
 				get_card_info(o[1])
 
 			if showQ == 'yes':
-				#print(o[1])
 				status, img_import = return_img_display(o[1])
 				if status == 'ok':
 					img_import.show()
@@ -177,9 +170,11 @@ def compare(img, p1, og_image, get_ci_arg, showQ):
 	if len(options) < 1:
 		print(Fore.RED + "File was less the a {}% match".format(p1*100))
 		print(Fore.GREEN + "Make sure the card is in one of the following sets: ")
-		as1 = config.active_sets2
-		for a in as1:
-			print(Fore.GREEN + "\t--+ {} || {}.".format(a[0], a[-1]))
+		from functions import set_table
+		set_table()
+		#as1 = config.active_sets2
+		#for a in as1:
+		#	print(Fore.GREEN + "\t--+ {} || {}.".format(a[0], a[-1]))
 	
 
 # check the simularity between two strings
@@ -191,11 +186,6 @@ def similar(a, b):
 def get_remote_card(url):
 	im = Image.open(requests.get(url, stream=True).raw)
 	return im
-
-# check if the url is good
-def check_url(url):
-	stat_code = requests.get(url)
-	return stat_code.status_code
 
 """
 check if percent entered is:
@@ -219,16 +209,145 @@ def check_percent(per):
 # make sure the file type is acceptable
 def check_file_type(f1):
 	# good file types for imgs
-	good_file_types = [
-		'jpg',
-		'jpeg',
-		'png'
-	]
+	good_file_types = ['jpg','jpeg','png']
 	file_type = os.path.splitext(f1)[1][1:]
 	if file_type in good_file_types:
 		return True
 	else:
 		return "{} is not acceptable image type!".format(file_type)
+
+"""
+change yes or no to y or n
+"""
+def change_yn(var):
+	# change to lowercase 
+	#print(var == "y")
+	if var == "yes":
+		return str("y")
+	elif var == "no":
+		return str("n")
+	else:
+		return var
+
+"""
+Accepts:
+	-+ image file path
+		-+ variable name: img
+		-+ Reason:
+			+ to check
+			+ main loop
+	-+ percent
+		-+ varable name: per
+		-+ Reason:
+			+ to check
+			+ main loop
+	-+ show og guessed img
+		-+ var name: show
+	-+ card info:
+		-+ variable_name: ci
+		-+ Reason:
+			+ to check
+			+ main loop
+	show info
+
+"""
+def single_image_check(img, per, show, ci):
+	if check_file_type(img) == True: # passed from main
+		head, tail = os.path.split(img)
+		del head
+		img = Image.open(img)
+		og_image = img
+
+		# check percent
+		if check_percent(per) == True:
+			print(Fore.GREEN + "Checking File:",  Fore.LIGHTBLUE_EX + " {}\n".format(tail))
+			percent = float(float(per)/float(100))
+			img = change_color(img)
+			img = crop_image(img)
+
+			# check get_ci_arg \ card info
+			if ci == 'y':
+				# check image show
+				if show == 'y':
+					compare(img, percent, og_image, 'yes', 'yes')
+				elif show == 'n':
+					compare(img, percent, og_image, 'yes', 'no')
+			elif ci == 'n':
+				# check image show
+				if show == 'y':
+					compare(img, percent, og_image, 'no', 'yes')
+				elif show == 'n':
+					compare(img, percent, og_image, 'no', 'no')
+			else:
+				print("\n\n")
+				dis_error()
+				print(Fore.RED + "{} is not a valid arguement for Card Information!".format(ci).center(os.get_terminal_size().columns))
+				dis_error_end()
+		else:
+			print("\n\n")
+			dis_error()
+			print(Fore.RED + check_percent(per).center(os.get_terminal_size().columns))
+			dis_error_end()
+
+	else:
+		dis_error()
+		print(Fore.RED + check_file_type(img).center(os.get_terminal_size().columns))
+		dis_error_end()
+
+"""
+image is a url
+"""
+def url_image_check(img, per, show, ci): 
+	url = img
+	try:
+		if int(check_url(img)) == 200:
+			img = get_remote_card(img)
+			og_image = img
+
+			# check percent
+			if check_percent(per) == True:
+				print(Fore.GREEN + "Checking URL:",  Fore.LIGHTBLUE_EX + " {}\n".format(url))
+				percent = float(float(per)/float(100))
+				img = change_color(img)
+				img = crop_image(img)
+
+				# check get_ci_arg \ card info
+				if ci == 'y':
+					# check image show
+					if show == 'y':
+						compare(img, percent, og_image, 'yes', 'yes')
+					elif show == 'n':
+						compare(img, percent, og_image, 'yes', 'no')
+				elif ci == 'n':
+					# check image show
+					if show == 'y':
+						compare(img, percent, og_image, 'no', 'yes')
+					elif show == 'n':
+						compare(img, percent, og_image, 'no', 'no')
+
+				else:
+					print("\n\n")
+					dis_error()
+					print(Fore.RED + "{} is not a valid arguement for Card Information!".format(ci).center(os.get_terminal_size().columns))
+					dis_error_end()
+
+			else:
+				dis_error()
+				print(Fore.RED + check_percent(per).center(os.get_terminal_size().columns))
+				dis_error_end()
+
+		else:
+			dis_error()
+			print('Bad URL returned a {} code. Exiting.'.format(check_url(img)))
+			dis_error_end()
+
+	except Exception as e:
+		print(e)
+
+	except:
+		dis_error()
+		print('Bad URL returned a {} code. Exiting.'.format(check_url(img)))
+		dis_error_end()
 
 def main():
 	# break from the command some
@@ -239,123 +358,118 @@ def main():
 	# display the ascii title
 	pt1()
 
-	print(Fore.CYAN + "Starting the search".center(os.get_terminal_size().columns, '='))
-
 	parser = argparse.ArgumentParser('python3', description=description)
 	requiredArgs = parser.add_argument_group('required named arguments')
 	requiredArgs.add_argument('-img', '--Image', help='Insert path to the Image here.', required=True)
-	parser.add_argument('-p', '--Percent', help='Enter the percent you want the comparison to be [whole numbers].', required=False, default=72)
 	parser.add_argument('-url', '--URL', help='Tell the script that the -img is a url. Usage [ -url y ]', required=False, default='n')
-	parser.add_argument('-ci', '--CI', help='Print out more information about a card if the script is 100 percent a match. [y or n]', required=False, default='no')
-	parser.add_argument('-show','--Show', help='Show guessed image. [y or n]', required=False, default='no')
+	parser.add_argument('-dir', '--DIR', help='Batch directory check the script that the -dir is a directory. Usage [-dir y]', required=False, default='n')
+	parser.add_argument('-batchFile', '--BatchFile', help='Batch File will process the contents. The args tell us if its local or remote.', required=False, default='n')
+	parser.add_argument('-p', '--Percent', help='Enter the percent you want the comparison to be [whole numbers].', required=False, default=72)
+	parser.add_argument('-ci', '--CI', help='Print out more information about a card if the script is 100 percent a match. [y or n]', required=False, default='n')
+	parser.add_argument('-show','--Show', help='Show guessed image. [y or n]', required=False, default='n')
 	argument = parser.parse_args()
 
-	# check if an image is an link or a path
-	if argument.URL.lower() == 'n' or argument.URL.lower() == 'no':
+	# argument vars
+	img_m = argument.Image # base image variable
+	url_m = 'y' if argument.URL.lower() == 'yes' else 'n'
+	dir_m = 'y' if argument.DIR.lower() == 'yes' else 'n'
+	per_m = argument.Percent # base percent variable
+	ci_m = 'y' if argument.CI.lower() == 'yes' else 'n'
+	show_m = 'y' if argument.Show.lower() == 'yes' else 'n'
+	batch_file = argument.BatchFile.lower()
+
+	print_passed_vars(img_m, url_m, dir_m, per_m, ci_m, show_m, batch_file)
+
+	print(Fore.CYAN + "Starting the search".center(os.get_terminal_size().columns, '='))
+
+	# check if an image is an link or a path for this if only and if dir = no
+	if url_m == 'n' and dir_m == 'n' and batch_file == 'n':
 		# check the file type
-		if check_file_type(argument.Image) == True:
-			img = str(argument.Image)  # user inputed file name
-			head, tail = os.path.split(img)
-			del head
-			img = Image.open(img)
-			og_image = img
+		print(Fore.GREEN + 'Single Image check'.center(os.get_terminal_size().columns, '='))
+		single_image_check(img_m, per_m, show_m, ci_m)
+	
+	elif url_m == 'y' and dir_m == 'n' and batch_file == 'n':
+		print(Fore.GREEN + 'URL image check'.center(os.get_terminal_size().columns, '='))
+		url_image_check(img_m, per_m, show_m, ci_m)
 
-			# check percent
-			if check_percent(argument.Percent) == True:
-				print(Fore.GREEN + "Checking File:",  Fore.LIGHTBLUE_EX + " {}\n".format(tail))
-				percent = float(float(argument.Percent)/float(100))
-				img = change_color(img)
-				img = crop_image(img)
-
-				# check get_ci_arg \ card info
-				if argument.CI.lower() == 'y' or argument.CI.lower() == 'yes':
-					# check image show
-					if argument.Show.lower() == 'y' or argument.Show.lower() == 'yes':
-						compare(img, percent, og_image, 'yes', 'yes')
-					elif argument.Show.lower() == 'n' or argument.Show.lower() == 'no':
-						compare(img, percent, og_image, 'yes', 'no')
-				elif argument.CI.lower() == 'n' or argument.CI.lower() == 'no':
-					# check image show
-					if argument.Show.lower() == 'y' or argument.Show.lower() == 'yes':
-						compare(img, percent, og_image, 'no', 'yes')
-					elif argument.Show.lower() == 'n' or argument.Show.lower() == 'no':
-						compare(img, percent, og_image, 'no', 'no')
-				else:
-					print("\n\n")
-					dis_error()
-					print(Fore.RED + "{} is not a valid arguement!".format(argument.CI).center(os.get_terminal_size().columns))
-					dis_error_end()
+	elif url_m == 'n' and dir_m == 'y' and batch_file == 'n':
+		print(Fore.GREEN + 'Batch Directory check'.center(os.get_terminal_size().columns, '='))
+		# load dir loopcheck if is a directory first
+		if os.path.isdir(img_m) == True:
+			fileList = os.listdir(img_m)
+			number_of_good_files, load_imgs_files = dir_checker(img_m, fileList) # this is the name of the files
+			if number_of_good_files != 0:
+				print(Fore.CYAN + "{} good files found!!".format(number_of_good_files))
+				for img in load_imgs_files:
+					single_image_check(img, per_m, show_m, ci_m)
 			else:
-				print("\n\n")
 				dis_error()
-				print(Fore.RED + check_percent(argument.Percent).center(os.get_terminal_size().columns))
+				print(Fore.RED + "No good image files found in that directory.".center(os.get_terminal_size().columns))
 				dis_error_end()
-
 		else:
 			dis_error()
-			print(Fore.RED + check_file_type(argument.Image).center(os.get_terminal_size().columns))
+			print(Fore.RED + "Not a directory.".center(os.get_terminal_size().columns))
 			dis_error_end()
 
-	elif argument.URL.lower() == 'y' or argument.URL.lower() == 'yes':
-		# this tru
-		try:
-			if int(check_url(argument.Image)) == 200:
-				img = get_remote_card(argument.Image)
-				og_image = img
-
-				# check percent
-				if check_percent(argument.Percent) == True:
-					print(Fore.GREEN + "Checking URL:",  Fore.LIGHTBLUE_EX + " {}\n".format(argument.Image))
-					percent = float(float(argument.Percent)/float(100))
-					img = change_color(img)
-					img = crop_image(img)
-
-					# check get_ci_arg \ card info
-					if argument.CI.lower() == 'y' or argument.CI.lower() == 'yes':
-						# check image show
-						if argument.Show.lower() == 'y' or argument.Show.lower() == 'yes':
-							compare(img, percent, og_image, 'yes', 'yes')
-						elif argument.Show.lower() == 'n' or argument.Show.lower() == 'no':
-							compare(img, percent, og_image, 'yes', 'no')
-					elif argument.CI.lower() == 'n' or argument.CI.lower() == 'no':
-						# check image show
-						if argument.Show.lower() == 'y' or argument.Show.lower() == 'yes':
-							compare(img, percent, og_image, 'no', 'yes')
-						elif argument.Show.lower() == 'n' or argument.Show.lower() == 'no':
-							compare(img, percent, og_image, 'no', 'no')
-
-						#compare(img, percent, og_image, 'no')
-					else:
-						print("\n\n")
-						dis_error()
-						print(Fore.RED + "{} is not a valid arguement!".format(argument.CI).center(os.get_terminal_size().columns))
-						dis_error_end()
-
+	if url_m == 'n' and dir_m == 'n' and batch_file != 'n':
+		# local processing
+		if batch_file == "local":
+			# see if the script can parse that format
+			file_format = os.path.splitext(img_m)[1][1:]
+			if file_format in config.acceptable_file_formats:
+				print(Fore.GREEN + '{} Batch File check'.format(batch_file).center(os.get_terminal_size().columns, '='))
+				# load and loop for the file
+				if file_format == 'txt':
+					number_of_good_files, load_imgs_files = read_batch_txt_path(img_m) # this is the name of the files
+				elif file_format == 'csv':
+					number_of_good_files, load_imgs_files = read_batch_csv_path(img_m) # this is the name of the files
 				else:
 					dis_error()
-					print(Fore.RED + check_percent(argument.Percent).center(os.get_terminal_size().columns))
+					print(Fore.RED + "{} is not a acceptable batch file format!".format(file_format).center(os.get_terminal_size().columns))
+					dis_error_end()				
+				
+				if number_of_good_files != 0:
+					print(Fore.CYAN + "{} good files found!!".format(number_of_good_files))
+					for img in load_imgs_files:
+						single_image_check(img, per_m, show_m, ci_m)
+				else:
+					dis_error()
+					print(Fore.RED + "No good image files found from that file.".center(os.get_terminal_size().columns))
 					dis_error_end()
+				
 
 			else:
 				dis_error()
-				print('Bad URL returned a {} code. Exiting.'.format(check_url(argument.Image)))
+				print(Fore.RED + "{} is not a acceptable batch file format!".format(file_format).center(os.get_terminal_size().columns))
+				dis_error_end()
+		elif batch_file == "remote":
+			print(Fore.GREEN + '{} Batch File check'.format(batch_file).center(os.get_terminal_size().columns, '='))
+			# load and loop for the file
+			file_format = os.path.splitext(img_m)[1][1:]
+			if file_format == 'txt':
+				number_of_good_files, load_imgs_files = read_batch_txt_url(img_m) # this is the name of the files
+			elif file_format == 'csv':
+				number_of_good_files, load_imgs_files = read_batch_csv_url(img_m) # this is the name of the files
+			else:
+				dis_error()
+				print(Fore.RED + "{} is not a acceptable batch file format!".format(file_format).center(os.get_terminal_size().columns))
 				dis_error_end()
 
-		except Exception as e:
-			print(e)
-
-		except:
+			if number_of_good_files != 0:
+				print(Fore.CYAN + "{} good URLS found!!".format(number_of_good_files))
+				for img in load_imgs_files:
+					url_image_check(img, per_m, show_m, ci_m)
+			else:
+				dis_error()
+				print(Fore.RED + "No good image URL found from that file.".center(os.get_terminal_size().columns))
+				dis_error_end()
+		else:
 			dis_error()
-			print('Bad URL returned a {} code. Exiting.'.format(check_url(argument.Image)))
+			print(Fore.RED + "{} is not a acceptable batch file mode!".format(batch_file).center(os.get_terminal_size().columns))
 			dis_error_end()
 
 	print(Fore.CYAN + "Ending the search".center(os.get_terminal_size().columns, '='))
 
-	
-	
-
 
 if __name__ == "__main__":
 	main()
-
-

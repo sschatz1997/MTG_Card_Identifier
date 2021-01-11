@@ -3,12 +3,23 @@
 import os
 import sys
 import config
-import requests
-import imagehash
 import pandas as pd
-from PIL import Image
 from tabulate import tabulate
-from color_functions import add_green, add_yellow, add_magenta, add_green_dim, add_red, color_heading
+
+from color_functions import add_green, add_yellow, add_magenta, add_green_dim, add_red, color_heading, add_blue
+
+# current time for filenames
+def datetimeNow():
+	import datetime
+	from datetime import date
+	from datetime import datetime
+	return datetime.today().strftime('%b %d %Y %H:%M:%S')
+
+# check if the url is good
+def check_url(url):
+	import requests
+	stat_code = requests.get(url)
+	return stat_code.status_code
 
 
 # get all card names that it can return a picture
@@ -47,6 +58,9 @@ def get_set_by_card2(card):
 
 # compare file by hash
 def image_compare_hash(name, imported):
+	import requests
+	import imagehash
+	from PIL import Image
 	df1 = pd.read_csv(config.all_good, index_col=False)
 	#df1 = pd.read_csv(config.all_bad, index_col=False)
 	try:
@@ -143,7 +157,7 @@ def process_raw_data(raw_data):
 		x += 1
 
 	header = [color_heading('Key'), color_heading('Value')]
-	print(tabulate(new_data2, header, tablefmt='fancy_grid'))
+	print(tabulate(new_data2, header, tablefmt='fancy_grid'))#, colalign=("center","center")))
 	print('\n')
 
 
@@ -151,6 +165,7 @@ def process_raw_data(raw_data):
 get the dataframe down to the card info from the api url with the cards info
 """
 def get_api_data(url, name):
+	import requests
 	re1 = requests.get(url) # get request
 	j1 = re1.json() # json 
 	df = pd.DataFrame.from_dict(j1) # dataframe all
@@ -183,6 +198,8 @@ def get_api_data(url, name):
 def color_change(color_list):
 	newL = []
 	for color_string in color_list:
+		newL.append(config.colors1.get(color_string))
+		"""
 		if color_string == 'B':
 			newL.append('Black')
 		elif color_string == 'U':
@@ -191,11 +208,13 @@ def color_change(color_list):
 			newL.append('Red')
 		elif color_string == 'W':
 			newL.append('White')
+		"""
 	return newL
-
 
 # return image type to display
 def return_img_display(name):
+	from PIL import Image
+	import requests
 	df1 = pd.read_csv(config.all_good, index_col=False)
 	try:
 		url = list(df1.loc[df1['card_name'] == str(name)]['image_url'])[-1]
@@ -203,3 +222,46 @@ def return_img_display(name):
 		return 'ok', img
 	except:
 		return 'no file found', 0
+
+
+"""# for prettier output
+def yn_to_full(val):
+	return config.y_n_d.get(val)
+	if val == 'y':
+		return 'Yes'
+	elif val == 'n':
+		return 'No'"""
+
+# print the variables 
+def print_passed_vars(img_m, url_m, dir_m, per_m, ci_m, show_m, batch_file):
+	# var list
+	varL = [
+            [add_green('Time ran: '), add_blue(datetimeNow())],
+			[add_green('Path: '), add_blue(img_m)],
+			[add_green('URL Toggle: '), add_red(config.y_n_d.get(url_m))],
+			[add_green('Directory Toggle: '), add_red(config.y_n_d.get(dir_m))],
+			[add_green('Percent: '), add_magenta(str('{}%'.format(per_m)))],
+			[add_green('Card Info Toggle: '), add_red(config.y_n_d.get(ci_m))],
+			[add_green('Show Found Card Toggle: '), add_red(config.y_n_d.get(show_m))],
+			[add_green('Batch File Mode: '), batch_file] #add_blue(yn_to_full(batch_file))]
+		]
+
+	header = [color_heading('Passed Argument Category'), color_heading('Passed Argument Value')]
+
+	print(tabulate(varL, header, tablefmt='fancy_grid'))#, colalign=("center","center")))
+	print('\n')
+
+# pretty possible set output
+def set_table():
+	# active sets
+	as1 = config.active_sets3
+	new_L = []
+	for a in as1:
+		#temp = [add_red(a[0]), add_red(a[1]),  add_red(a[2]), add_red(a[3])]
+		temp = []
+		for q in a:
+			temp.append(add_red(q))
+		new_L.append(temp)
+	
+	header = [color_heading('Set '), ' ', ' ', ' ']
+	print(tabulate(new_L,header, tablefmt='fancy_grid'))
