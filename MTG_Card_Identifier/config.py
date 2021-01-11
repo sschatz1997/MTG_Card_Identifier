@@ -93,7 +93,8 @@ card_info_api_keys_ftable = [
 	'Toughness',
 	'Formats Allowed',
 	'Set Printings',
-	'Text'
+	'Text',
+	'MTG Official Link'
 ]
 
 """

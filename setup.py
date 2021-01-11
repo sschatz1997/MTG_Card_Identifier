@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="MTG_Card_Identifier",  # Replace with your own username
-    version="0.0.1",
+    version="0.0.2",
     author="Sam Schatz",
     author_email="samsch1997@gmail.com",
     description="Find magic cards based on the Name on the card.",

@@ -129,6 +129,7 @@ def compare(img, p1, og_image, get_ci_arg, showQ):
 
 	card = 1
 
+	if len(options) != 0: print(add_green("Their are {} card options.\n".format(len(options))))
 	for o in options:
 		hash1, hash2 = image_compare_hash(o[1], og_image)
 		comb = hash1 - hash2
@@ -137,7 +138,6 @@ def compare(img, p1, og_image, get_ci_arg, showQ):
 
 		table = []
 		# table test 1
-		table.append([add_green("Text detected:"), add_yellow("{}".format(o[0]))])
 		table.append([add_green("Text detected:"), add_yellow("{}".format(o[0]))])
 		table.append([add_green("Card name closest: "), add_yellow("{}".format(o[1]))])
 		out_percent = round(float(o[2]*100), 2)
@@ -151,12 +151,13 @@ def compare(img, p1, og_image, get_ci_arg, showQ):
 		print(tabulate(table, header, tablefmt='grid'))
 
 		if comb == 0:
-			print(Fore.GREEN + "The file you uploaded is",Fore.RED + " {}\n".format(o[1].replace(".jpg", "")))
+			print(Fore.GREEN + "The Card you uploaded is",Fore.RED + " {}\n".format(o[1].replace(".jpg", "")))
 			# print info if y
 			if get_ci_arg == 'yes':
 				print("\n\n")
 				print(Fore.CYAN + "Displaying Card Info".center(os.get_terminal_size().columns, '-'))
 				get_card_info(o[1])
+				print(Fore.CYAN + "".center(os.get_terminal_size().columns, '-'))
 
 			if showQ == 'yes':
 				status, img_import = return_img_display(o[1])
@@ -168,7 +169,7 @@ def compare(img, p1, og_image, get_ci_arg, showQ):
 
 
 	if len(options) < 1:
-		print(Fore.RED + "File was less the a {}% match".format(p1*100))
+		print(Fore.RED + "Card was less the a {}% match\n\n".format(p1*100))
 		print(Fore.GREEN + "Make sure the card is in one of the following sets: ")
 		from functions import set_table
 		set_table()
@@ -260,7 +261,7 @@ def single_image_check(img, per, show, ci):
 
 		# check percent
 		if check_percent(per) == True:
-			print(Fore.GREEN + "Checking File:",  Fore.LIGHTBLUE_EX + " {}\n".format(tail))
+			print(Fore.GREEN + "\n\nChecking File:",  Fore.LIGHTBLUE_EX + " {}\n".format(tail))
 			percent = float(float(per)/float(100))
 			img = change_color(img)
 			img = crop_image(img)
@@ -306,7 +307,7 @@ def url_image_check(img, per, show, ci):
 
 			# check percent
 			if check_percent(per) == True:
-				print(Fore.GREEN + "Checking URL:",  Fore.LIGHTBLUE_EX + " {}\n".format(url))
+				print(Fore.GREEN + "\n\nChecking URL:",  Fore.LIGHTBLUE_EX + " {}\n".format(url))
 				percent = float(float(per)/float(100))
 				img = change_color(img)
 				img = crop_image(img)

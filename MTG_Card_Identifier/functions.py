@@ -128,7 +128,7 @@ def process_raw_data(raw_data):
 	new_data2 = []
 	lables = []
 	x = 0
-	max1 = len(keys)
+	max1 = len(keys)-1
 	while x != max1:
 		val = raw_data[x]
 		if type(val) == list:
@@ -136,29 +136,39 @@ def process_raw_data(raw_data):
 			for v in val:
 				if str(keys[x]) == 'Name':
 					new_data2.append([add_green(keys[x] + " {}".format(counter)), add_red(str(v))])
-					print("?")
-
-				new_data2.append(
-					[add_green(keys[x] + " {}".format(counter)),  add_yellow(str(v))])
+					#print("?")
+					M_name = v
+				new_data2.append([add_green(keys[x] + "? {}".format(counter)),  add_yellow(str(v))])
 				new_data.append(str(v))
 				lables.append(keys[x] + " {}:".format(counter))
 				counter += 1
 		else:
 			if str(keys[x]) == 'Name':
 				new_data2.append([add_green(keys[x]), add_red(str(val))])
+				M_name = val
 
 			elif str(keys[x]) == 'Converted Mana Cost' or str(keys[x]) == 'Power' or str(keys[x]) == 'Toughness':
 				new_data2.append([add_green(keys[x]), add_magenta(str(val))])
-
+			elif str(keys[x]) == 'Text':
+				text = val.split("\n")
+				counter = 1
+				for t in text:
+					new_data2.append([add_green(keys[x]+" line {}".format(counter)), add_yellow(t)])
+					counter += 1
+			#elif str(keys[x]) == 'MTG Official Link':
+			#	new_data2.append([add_green(keys[x]), add_magenta(str(M_name))])
+			#	print("?")
 			else:
 				new_data2.append([add_green(keys[x]), add_yellow(str(val))])
 				new_data.append(str(val))
 				lables.append(keys[x]+":")
 		x += 1
+	new_data2.append([add_green('MTG Official Link'), add_magenta(get_image_url(str(M_name)))])
 
 	header = [color_heading('Key'), color_heading('Value')]
 	print(tabulate(new_data2, header, tablefmt='fancy_grid'))#, colalign=("center","center")))
 	print('\n')
+
 
 
 """
@@ -223,6 +233,13 @@ def return_img_display(name):
 	except:
 		return 'no file found', 0
 
+# get image url
+def get_image_url(name):
+	df1 = pd.read_csv(config.all_good, index_col=False)
+	try:
+		return list(df1.loc[df1['card_name'] == str(name)]['image_url'])[-1]
+	except :
+		return 'n/a'
 
 """# for prettier output
 def yn_to_full(val):

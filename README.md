@@ -71,6 +71,20 @@ required named arguments:
                         Insert path to the Image here.
 ```
 
+## Batch File format
+
+### txt File
+Just links for either local paths or URLs.
+```
+https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=916&type=card
+```
+
+### CSV Files
+A header line then just links for either local paths or URLs.
+```
+header
+https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=916&type=card
+```
   ## Sets included:
 | Set Name | Cards Available | Total Cards in Set | Set Name | Cards Available | Total Cards in Set |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
