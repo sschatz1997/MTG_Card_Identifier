@@ -71,7 +71,19 @@ required named arguments:
                         Insert path to the Image here.
 ```
 
-## Batch File format
+  ## Requirements
+  ### Python PIP Packages:
+  - [Art](https://pypi.org/project/Art/)
+  - [Colorama](https://pypi.org/project/colorama/)
+  - [Imagehash](https://pypi.org/project/ImageHash/)
+  - [Opencv_python](https://pypi.org/project/opencv-python/)
+  - [Pandas](https://pypi.org/project/pandas/)
+  - [Pytesseract](https://pypi.org/project/pytesseract/)
+  - [Pillow](https://pypi.org/project/Pillow/)
+  - [Requests](https://pypi.org/project/requests/)
+  - [Tabulate](https://pypi.org/project/tabulate/)
+
+## Batch File formats
 
 ### txt File
 Just links for either local paths or URLs.
